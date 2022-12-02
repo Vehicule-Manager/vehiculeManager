@@ -9,7 +9,7 @@
  
 ### ![MariaDB](https://img.shields.io/badge/MariaDB-black?style=flat-square&logo=mariadb) Commandes MariaDB
 
- - show databases (voir les BDD)
+ - show databases (voir les BDDS)
  - Show tables (voir les tables)
   
  
