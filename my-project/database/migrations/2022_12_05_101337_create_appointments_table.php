@@ -17,7 +17,27 @@ return new class extends Migration
             $table->increments('id');
             $table->DATE('Date and hour');
             $table->string('description');
+            $table->integer('id_employees')->unsigned();
+            $table->integer('id_clients')->unsigned();
+            $table->integer('id_objects')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('appointments', function ($table) {
+            $table
+                ->foreign('id_employees')
+                ->references('id')
+                ->on('employees');
+
+            $table
+                ->foreign('id_clients')
+                ->references('id')
+                ->on('clients');
+
+            $table
+                ->foreign('id_objects')
+                ->references('id')
+                ->on('objects');
         });
     }
 
