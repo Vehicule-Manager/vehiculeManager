@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('id_vehicules')->unsigned();
             $table->timestamps();
         });
+
         Schema::table('medias', function ($table) {
             $table
                 ->foreign('id_clients')

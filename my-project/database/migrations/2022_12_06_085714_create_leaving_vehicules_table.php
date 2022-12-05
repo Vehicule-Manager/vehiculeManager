@@ -18,7 +18,21 @@ return new class extends Migration
             $table->date('leavingDate');
             $table->date('renderDate');
             $table->string('contract',50);
+            $table->integer('id_clients')->unsigned();
+            $table->integer('id_vehicules')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('leaving_vehicules', function ($table) {
+            $table
+                ->foreign('id_clients')
+                ->references('id')
+                ->on('clients');
+
+            $table
+                ->foreign('id_vehicules')
+                ->references('id')
+                ->on('vehicules');
         });
     }
 
