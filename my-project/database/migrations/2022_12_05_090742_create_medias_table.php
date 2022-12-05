@@ -14,11 +14,24 @@ return new class extends Migration
     public function up()
     {
         Schema::create('medias', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('link', 255);
             $table->string('name', 50);
-            $table->string('type',50);
+            $table->string('type', 50);
+            $table->integer('id_clients')->unsigned();
+            $table->integer('id_vehicules')->unsigned();
             $table->timestamps();
+        });
+        Schema::table('medias', function ($table) {
+            $table
+                ->foreign('id_clients')
+                ->references('id')
+                ->on('clients');
+
+            $table
+                ->foreign('id_vehicules')
+                ->references('id')
+                ->on('vehicules');
         });
     }
 

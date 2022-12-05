@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('credit_infos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('placeOfBirth', 50);
             $table->string('nationality', 50);
             $table->float('budgets', 10, 2);
