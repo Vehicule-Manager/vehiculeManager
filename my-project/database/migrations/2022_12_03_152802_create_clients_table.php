@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('optionalAddress', 150);
             $table->string('zipCode', 7);
             $table->string('city', 100);
+            $table->integer('id_users')->unsigned();
+            $table->integer('id_creditInfos')->unsigned();
+
             $table->timestamps();
         });
         Schema::table('clients',function ($table){

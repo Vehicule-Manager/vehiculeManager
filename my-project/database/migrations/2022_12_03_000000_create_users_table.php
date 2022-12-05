@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password',255);
             $table->string('mail', 100);
             $table->boolean('mailVerified');
+            $table->integer('id_roles')->unsigned();
             $table->timestamps();
         });
         Schema::table('users',function ($table){

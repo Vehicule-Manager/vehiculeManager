@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('firstname',50);
             $table->string('lastname', 50);
             $table->string('job', 50);
+            $table->integer('id_users')->unsigned();
             $table->timestamps();
         });
         Schema::table('employees',function ($table){
