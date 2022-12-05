@@ -21,6 +21,9 @@ return new class extends Migration
             $table->boolean('mailVerified');
             $table->timestamps();
         });
+        Schema::table('users',function ($table){
+            $table->foreign('id_roles')->references('id')->on('roles');
+        });
     }
 
     /**

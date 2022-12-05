@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('job', 50);
             $table->timestamps();
         });
+        Schema::table('employees',function ($table){
+            $table->foreign('id_users')->references('id')->on('users');
+        });
     }
 
     /**

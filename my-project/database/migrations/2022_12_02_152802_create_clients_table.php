@@ -25,6 +25,10 @@ return new class extends Migration
             $table->string('city', 100);
             $table->timestamps();
         });
+        Schema::table('clients',function ($table){
+            $table->foreign('id_users')->references('id')->on('users');
+            $table->foreign('id_creditInfos')->references('id')->on('credit_infos');
+        });
     }
 
     /**
