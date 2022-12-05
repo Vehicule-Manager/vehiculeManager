@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('appointments', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->DATE('Date and hour');
             $table->string('description');
             $table->timestamps();

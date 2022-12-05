@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vehicle_by_articles', function (Blueprint $table) {
+        Schema::create('vehicules_by_articles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_vehicules')->unsigned();
             $table->integer('id_articles')->unsigned();
             $table->timestamps();
         });
 
-        Schema::table('vehicle_by_articles', function ($table) {
+        Schema::table('vehicules_by_articles', function ($table) {
             $table
                 ->foreign('id_vehicules')
                 ->references('id')
@@ -40,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehicle_by_articles');
+        Schema::dropIfExists('vehicules_by_articles');
     }
 };
