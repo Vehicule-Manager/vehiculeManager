@@ -6,13 +6,25 @@
 - voir les conteneur - docker ps
 - Démarrer un service - docker exec -it <nom du conteneur> bash
 - Connexion BDD - mysql -h < Host > -u < user > -p < password >
+
+   Migration
+   
+- Créer un model + migration : docker-compose run myapp php artisan make:model < nom du model > -m
+- Faire un migrate : docker-compose run myapp php artisan migrate
  
 ### ![MariaDB](https://img.shields.io/badge/MariaDB-black?style=flat-square&logo=mariadb) Commandes MariaDB
 
  - show databases (voir les BDDS)
  - Show tables (voir les tables)
   
+ ### ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github) Commandes Github
  
+ - Commit avec add les modif dans fichier : git commit -a -m" < le message > "
+ - Stocker les modification : git stash 
+ - Pull les modif sur la branche : git pull --rebase 
+ - Récupérer les modifications du stash : git stash pop
+ - Créer une branche github et aller dessus : git checkout -b < nom de la branche >
+ - Pour naviguer entrer les branches github : git checkout < nom de la branche >
  
   
 
