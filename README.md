@@ -19,11 +19,13 @@
   
  ### ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github) Commandes Github
  
- - Commit avec add les modif dans fichier : git commit -a -m" < le message > "
+ - Créer une branche github et aller dessus : git checkout -b < nom de la branche >
  - Stocker les modification : git stash 
  - Pull les modif sur la branche : git pull --rebase 
  - Récupérer les modifications du stash : git stash pop
- - Créer une branche github et aller dessus : git checkout -b < nom de la branche >
+ - Commit avec add les modif dans fichier : git commit -a -m" < le message > "
+ - Push la branche : git push -u origin main
+ 
  - Pour naviguer entrer les branches github : git checkout < nom de la branche >
  
   
