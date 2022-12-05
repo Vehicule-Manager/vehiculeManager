@@ -14,15 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('vehicle_by_articles', function (Blueprint $table) {
-            $table->id();
-            $table->integer('id_vehicles')->unsigned();
+            $table->increments('id');
+            $table->integer('id_vehicules')->unsigned();
             $table->integer('id_articles')->unsigned();
             $table->timestamps();
         });
 
         Schema::table('vehicle_by_articles', function ($table) {
             $table
-                ->foreign('id_vehicles')
+                ->foreign('id_vehicules')
                 ->references('id')
                 ->on('vehicules');
 
