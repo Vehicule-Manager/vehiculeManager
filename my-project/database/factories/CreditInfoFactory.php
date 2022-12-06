@@ -17,7 +17,7 @@ class CreditInfoFactory extends Factory
     {
         return [
             'placeOfBirth' => $this->faker->city(),
-            'nationality' => $this->faker->country(),
+            'nationality' => $this->faker->countryCode(),
             'budgets' => $this->faker->randomNumber(4, 6),
             'contract' => $this->faker->word(1, true),
             'contractDate' => $this->faker->date('Y_m_d'),
