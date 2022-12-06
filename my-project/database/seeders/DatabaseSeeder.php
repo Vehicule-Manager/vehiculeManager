@@ -17,14 +17,11 @@ use App\Models\Subject;
 use App\Models\Media;
 use App\Models\Appointment;
 use App\Models\Employee;
-<<<<<<< HEAD
 use App\Models\LeavingVehicule;
 use App\Models\Article;
 use App\Models\VehiculeByArticle;
-=======
 use App\Models\FamilySituation;
 use App\Models\ProfessionnalSituation;
->>>>>>> 1bd15c5 (modify seeder)
 
 class DatabaseSeeder extends Seeder
 {
@@ -49,13 +46,10 @@ class DatabaseSeeder extends Seeder
         Media::factory(5)->create();
         Employee::factory(5)->create();
         Appointment::factory(5)->create();
-<<<<<<< HEAD
         LeavingVehicule::factory(5)->create();
         Article::factory(5)->create();
         VehiculeByArticle::factory(5)->create();
-=======
         FamilySituation::factory(5)->create();
         ProfessionnalSituation::factory(5)->create();
->>>>>>> 1bd15c5 (modify seeder)
     }
 }
