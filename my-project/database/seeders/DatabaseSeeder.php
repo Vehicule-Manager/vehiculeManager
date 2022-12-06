@@ -13,6 +13,8 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Client;
 use App\Models\Vehicule;
+use App\Models\Media;
+use App\Models\Appointment;
 
 
 class DatabaseSeeder extends Seeder
@@ -34,7 +36,7 @@ class DatabaseSeeder extends Seeder
         User::factory(5)->create();
         Client::factory(5)->create();
         Vehicule::factory(5)->create();
-
-
+        Media::factory(5)->create();
+        Appointment::factory(5)->create();
     }
 }
