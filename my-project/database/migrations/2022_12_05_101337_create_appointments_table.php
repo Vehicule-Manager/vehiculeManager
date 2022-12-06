@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->integer('id_employees')->unsigned();
             $table->integer('id_clients')->unsigned();
-            $table->integer('id_objects')->unsigned();
+            $table->integer('id_subjects')->unsigned();
             $table->timestamps();
         });
 
@@ -35,9 +35,9 @@ return new class extends Migration
                 ->on('clients');
 
             $table
-                ->foreign('id_objects')
+                ->foreign('id_subjects')
                 ->references('id')
-                ->on('objects');
+                ->on('subjects');
         });
     }
 
