@@ -2,15 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\CreditInfo;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class CreditInfoFactory extends Factory
 {
 
-    protected $model = CreditInfo::class;
-    
     /**
      * Define the model's default state.
      *
