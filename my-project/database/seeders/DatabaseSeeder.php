@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-
+use App\Models\User;
 use App\Models\Role;
 use Illuminate\Database\Seeder;
 use App\Models\Type;
@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         Status::factory(5)->create();
         Energie::factory(5)->create();
         Role::factory(5)->create();
+        User::factory(5)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
