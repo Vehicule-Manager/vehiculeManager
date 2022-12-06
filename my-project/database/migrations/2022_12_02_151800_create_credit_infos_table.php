@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('placeOfBirth', 50);
             $table->string('nationality', 50);
             $table->float('budgets', 10, 2);
-            $table->string('contract', 3);
+            $table->string('contract', 60);
             $table->date('contractDate');
             $table->string('banquet',25);
             $table->string('professionnalStatus', 50);
