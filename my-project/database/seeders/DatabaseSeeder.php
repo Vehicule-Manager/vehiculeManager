@@ -13,16 +13,13 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Client;
 use App\Models\Vehicule;
-<<<<<<< HEAD
 use App\Models\Subject;
 use App\Models\Media;
 use App\Models\Appointment;
 use App\Models\Employee;
-=======
 use App\Models\LeavingVehicule;
 use App\Models\Article;
 use App\Models\VehiculeByArticle;
->>>>>>> fb31798 (add factory/seeder leavingVehicule article vehiculeByArticle)
 
 class DatabaseSeeder extends Seeder
 {
@@ -43,15 +40,12 @@ class DatabaseSeeder extends Seeder
         User::factory(5)->create();
         Client::factory(5)->create();
         Vehicule::factory(5)->create();
-<<<<<<< HEAD
         Subject::factory(5)->create();
         Media::factory(5)->create();
         Employee::factory(5)->create();
         Appointment::factory(5)->create();
-=======
         LeavingVehicule::factory(5)->create();
         Article::factory(5)->create();
         VehiculeByArticle::factory(5)->create();
->>>>>>> fb31798 (add factory/seeder leavingVehicule article vehiculeByArticle)
     }
 }
