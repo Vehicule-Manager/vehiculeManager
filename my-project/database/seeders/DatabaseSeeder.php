@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Client;
 use Illuminate\Database\Seeder;
 use App\Models\Type;
 use App\Models\CreditInfo;
@@ -29,6 +30,7 @@ class DatabaseSeeder extends Seeder
         Energie::factory(5)->create();
         Role::factory(5)->create();
         User::factory(5)->create();
+        Client::factory(5)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
