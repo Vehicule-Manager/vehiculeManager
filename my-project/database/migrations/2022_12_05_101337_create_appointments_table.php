@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->increments('id');
-            $table->DATE('Date and hour');
+            $table->date('date_and_hour');
             $table->string('description');
             $table->integer('id_employees')->unsigned();
             $table->integer('id_clients')->unsigned();
