@@ -33,3 +33,15 @@ Route::post('/appointment', [AppointmentController::class, 'appointmentStore']);
 Route::put('/appointment/{id}', [AppointmentController::class, 'appointmentUpdate']);
 // Delete a appointment
 Route::delete('/appointment/{id}', [AppointmentController::class, 'appointmentDestroy']);
+
+// Route for credit infos
+// List of all credit infos
+Route::get('/credit-infos', [CreditInfoController::class, 'creditInfosIndex']);
+// Display one credit infos
+Route::get('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosShow']);
+// Add a new credit infos
+Route::post('/credit-infos', [CreditInfoController::class, 'creditInfosStore']);
+// Edit a credit infos
+Route::put('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosUpdate']);
+// Delete a credit infos
+Route::delete('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosDestroy']);
