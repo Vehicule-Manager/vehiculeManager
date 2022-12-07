@@ -23,7 +23,10 @@ return new class extends Migration
             $table->timestamps();
         });
         Schema::table('users',function ($table){
-            $table->foreign('id_roles')->references('id')->on('roles');
+            $table->foreign('id_roles')
+                ->references('id')
+                ->on('roles')
+                ->onDelete('cascade');
         });
     }
 

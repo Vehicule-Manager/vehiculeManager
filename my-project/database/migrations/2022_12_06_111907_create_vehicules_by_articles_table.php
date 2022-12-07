@@ -24,12 +24,14 @@ return new class extends Migration
             $table
                 ->foreign('id_vehicules')
                 ->references('id')
-                ->on('vehicules');
+                ->on('vehicules')
+                ->onDelete('cascade');
 
             $table
                 ->foreign('id_articles')
                 ->references('id')
-                ->on('articles');
+                ->on('articles')
+                ->onDelete('cascade');
         });
     }
 
