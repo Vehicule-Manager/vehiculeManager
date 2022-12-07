@@ -36,32 +36,38 @@ return new class extends Migration
             $table
                 ->foreign('id_statuses')
                 ->references('id')
-                ->on('statuses');
+                ->on('statuses')
+                ->onDelete('cascade');
 
             $table
                 ->foreign('id_clients')
                 ->references('id')
-                ->on('clients');
+                ->on('clients')
+                ->onDelete('cascade');
 
             $table
                 ->foreign('id_gear_boxes')
                 ->references('id')
-                ->on('gear_boxes');
+                ->on('gear_boxes')
+                ->onDelete('cascade');
 
             $table
                 ->foreign('id_brands')
                 ->references('id')
-                ->on('brands');
+                ->on('brands')
+                ->onDelete('cascade');
 
             $table
                 ->foreign('id_energies')
                 ->references('id')
-                ->on('energies');
+                ->on('energies')
+                ->onDelete('cascade');
 
             $table
                 ->foreign('id_types')
                 ->references('id')
-                ->on('types');
+                ->on('types')
+                ->onDelete('cascade');
         });
     }
 

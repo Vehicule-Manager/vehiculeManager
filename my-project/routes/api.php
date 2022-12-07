@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\VehiculeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
@@ -45,3 +47,27 @@ Route::post('/credit-infos', [CreditInfoController::class, 'creditInfosStore']);
 Route::put('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosUpdate']);
 // Delete a credit infos
 Route::delete('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosDestroy']);
+
+//route pour type
+// List of all type
+Route::get('/type', [TypeController::class, 'typeIndex']);
+// Display one type
+Route::get('/type/{id}', [TypeController::class, 'typeShow']);
+// Add a new type
+Route::post('/type', [TypeController::class, 'typeStore']);
+// Edit a type
+Route::put('/type/{id}', [TypeController::class, 'typeUpdate']);
+// Delete a type
+Route::delete('/type/{id}', [TypeController::class, 'typeDestroy']);
+
+//route pour vehicule
+// List of all vehicule
+Route::get('/vehicule', [VehiculeController::class, 'vehiculeIndex']);
+// Display one vehicule
+Route::get('/vehicule/{id}', [VehiculeController::class, 'vehiculeShow']);
+// Add a new vehicule
+Route::post('/vehicule', [VehiculeController::class, 'vehiculeStore']);
+// Edit a vehicule
+Route::put('/vehicule/{id}', [VehiculeController::class, 'vehiculeUpdate']);
+// Delete a vehicule
+Route::delete('/vehicule/{id}', [VehiculeController::class, 'vehiculeDestroy']);

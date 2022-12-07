@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
         });
         Schema::table('employees',function ($table){
-            $table->foreign('id_users')->references('id')->on('users');
+            $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

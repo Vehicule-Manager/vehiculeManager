@@ -27,17 +27,20 @@ return new class extends Migration
             $table
                 ->foreign('id_employees')
                 ->references('id')
-                ->on('employees');
+                ->on('employees')
+                ->onDelete('cascade');
 
             $table
                 ->foreign('id_clients')
                 ->references('id')
-                ->on('clients');
+                ->on('clients')
+                ->onDelete('cascade');
 
             $table
                 ->foreign('id_subjects')
                 ->references('id')
-                ->on('subjects');
+                ->on('subjects')
+                ->onDelete('cascade');
         });
     }
 
