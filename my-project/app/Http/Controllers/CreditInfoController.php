@@ -21,7 +21,7 @@ class CreditInfoController extends Controller
 
     public function creditInfosShow($id)
     {
-        $creditInfo = DB::table('credit_infos')->select('placeOfBirth', 'nationality', 'budgets', 'contract', 'contractDate','banquet','professionnalStatus','familysituation')->where('id', '=', $id)->get();
+        $creditInfo = DB::table('credit_infos')->select('placeOfBirth', 'nationality', 'budgets', 'contract', 'contractDate', 'banquet', 'professionnalStatus', 'familysituation')->where('id', '=', $id)->get();
         return response()->json($creditInfo);
     }
 
@@ -32,7 +32,7 @@ class CreditInfoController extends Controller
 
     public function creditInfosDestroy($id)
     {
-        $creditInfo = DB::table('credit_infos')->where('id','=',$id)->delete();
+        $creditInfo = DB::table('credit_infos')->where('id', '=', $id)->delete();
         return response()->json($creditInfo);
     }
 }

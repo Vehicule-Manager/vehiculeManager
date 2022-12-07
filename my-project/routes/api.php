@@ -45,3 +45,15 @@ Route::post('/credit-infos', [CreditInfoController::class, 'creditInfosStore']);
 Route::put('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosUpdate']);
 // Delete a credit infos
 Route::delete('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosDestroy']);
+
+// Route for Family Situation
+// List of all family Situation
+Route::get('/situation-familiale', [FamilySituationController::class, 'familySituationIndex']);
+// Display one family situation
+Route::get('/situation-familiale/{id}', [FamilySituationController::class, 'familySituationShow']);
+// Add a new family situation
+Route::post('/situation-familiale', [FamilySituationController::class, 'familySituationStore']);
+// Edit a family situation
+Route::put('/situation-familiale/{id}', [FamilySituationController::class, 'familySituationUpdate']);
+// Delete a family situation
+Route::delete('/situation-familiale/{id}', [FamilySituationController::class, 'familySituationDestroy']);
