@@ -21,12 +21,18 @@ class AppointmentController extends Controller
 
     public function appointmentShow($id)
     {
-        $appointment = DB::table('appointments')->select('date_and_hour','description','id_employees','id_clients','id_subjects')->where('id', '=', $id)->get();
+        $appointment = DB::table('appointments')->select('date_and_hour', 'description', 'id_employees', 'id_clients', 'id_subjects')->where('id', '=', $id)->get();
         return response()->json($appointment);
     }
 
     public function appointmentUpdate($id, Request $request)
     {
         return response()->json();
+    }
+
+    public function appointmentDestroy($id)
+    {
+        $appointment = DB::table('appointments')->where('id','=',$id)->delete();
+        return response()->json($appointment);
     }
 }

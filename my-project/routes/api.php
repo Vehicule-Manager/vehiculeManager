@@ -31,3 +31,5 @@ Route::get('/appointment/{id}', [AppointmentController::class, 'appointmentShow'
 Route::post('/appointment', [AppointmentController::class, 'appointmentStore']);
 // Edit a appointment
 Route::put('/appointment/{id}', [AppointmentController::class, 'appointmentUpdate']);
+// Delete a appointment
+Route::delete('/appointment/{id}', [AppointmentController::class, 'appointmentDestroy']);
