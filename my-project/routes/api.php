@@ -30,4 +30,4 @@ Route::get('/appointment/{id}', [AppointmentController::class, 'appointmentShow'
 // Add a new appointment
 Route::post('/appointment', [AppointmentController::class, 'appointmentStore']);
 // Edit a appointment
-Route::put('/appointment/{id}', [AppointmentController::class, 'appointmentShow']);
+Route::put('/appointment/{id}', [AppointmentController::class, 'appointmentUpdate']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
@@ -20,10 +21,11 @@ class AppointmentController extends Controller
 
     public function appointmentShow($id)
     {
-        return response()->json();
+        $appointment = DB::table('appointments')->select('date_and_hour','description','id_employees','id_clients','id_subjects')->where('id', '=', $id)->get();
+        return response()->json($appointment);
     }
 
-    public function editAppointment($id, Request $request)
+    public function appointmentUpdate($id, Request $request)
     {
         return response()->json();
     }
