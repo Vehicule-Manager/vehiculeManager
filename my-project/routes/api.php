@@ -12,6 +12,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\SubjectController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\GearBoxeController;
@@ -19,6 +20,9 @@ use App\Http\Controllers\LeavingVehiculeController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\VehiculeController;
+=======
+use App\Http\Controllers\RoleController;
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -138,12 +142,13 @@ Route::get('/user', [UserController::class, 'userIndex']);
 // Display one user
 Route::get('/user/{id}', [UserController::class, 'userShow']);
 // Add user
-Route::post('/user', [VehiculeController::class, 'userStore']);
+Route::post('/user', [UserController::class, 'userStore']);
 // Update a user
 Route::put('/user/{id}', [UserController::class, 'userUpdate']);
 // Delete a user
 Route::delete('/user/{id}', [UserController::class, 'userDestroy']);
 
+<<<<<<< Updated upstream
 // Route for Brand
 // List of all brand
 Route::get('/brand', [BrandController::class, 'brandIndex']);
@@ -203,3 +208,40 @@ Route::post('/article', [ArticleController::class, 'articleStore']);
 Route::put('/article/{id}', [ArticleController::class, 'articleUpdate']);
 // Delete a article
 Route::delete('/article/{id}', [ArticleController::class, 'articleDestroy']);
+=======
+// Route for Subject
+// List of all subjects
+Route::get('/subject', [SubjectController::class, 'subjectIndex']);
+// Display one subject
+Route::get('/subject/{id}', [SubjectController::class, 'subjectShow']);
+// Add subject
+Route::post('/subject', [SubjectController::class, 'subjectStore']);
+// Update subject
+Route::put('/subject/{id}', [SubjectController::class, 'subjectUpdate']);
+// Delete subject
+Route::delete('/subject/{id}', [SubjectController::class, 'subjectDestroy']);
+
+// Route for Client
+// List of all clients
+Route::get('/client', [ClientController::class, 'clientIndex']);
+// Display one client
+Route::get('/client/{id}', [ClientController::class, 'clientShow']);
+// Add a client
+Route::post('/client', [ClientController::class, 'clientStore']);
+// Update a client
+Route::put('/client/{id}', [ClientController::class, 'clientUpdate']);
+// Delete a client
+Route::delete('/client/{id}', [ClientController::class, 'clientDestroy']);
+
+// Route for Role
+// List of all roles
+Route::get('/role', [RoleController::class, 'roleIndex']);
+// Display one role
+Route::get('/role/{id}', [RoleController::class, 'roleShow']);
+// Add a role
+Route::post('/role', [RoleController::class, 'roleStore']);
+// Update a role
+Route::put('/role/{id}', [RoleController::class, 'roleUpdate']);
+// Delete a role
+Route::delete('/role/{id}', [RoleController::class, 'roleDestroy']);
+>>>>>>> Stashed changes
