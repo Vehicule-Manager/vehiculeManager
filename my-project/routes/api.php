@@ -10,6 +10,11 @@ use App\Http\Controllers\FamilySituationController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\ProfessionnalSituationController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\SubjectController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -121,3 +126,15 @@ Route::post('/employee', [EmployeeController::class, 'employeeStore']);
 Route::put('/employee/{id}', [EmployeeController::class, 'employeeUpdate']);
 // Delete a Employee
 Route::delete('/employee/{id}', [EmployeeController::class, 'employeeDestroy']);
+
+// Route for User
+// List of all users
+Route::get('/user', [UserController::class, 'userIndex']);
+// Display one user
+Route::get('/user/{id}', [UserController::class, 'userShow']);
+// Add user
+Route::post('/user', [VehiculeController::class, 'userStore']);
+// Update a user
+Route::put('/user/{id}', [UserController::class, 'userUpdate']);
+// Delete a user
+Route::delete('/user/{id}', [UserController::class, 'userDestroy']);
