@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\TypeController;
-use App\Http\Controllers\VehiculeController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
@@ -13,6 +12,13 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\GearBoxeController;
+use App\Http\Controllers\LeavingVehiculeController;
+use App\Http\Controllers\StatusController;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\VehiculeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +59,7 @@ Route::put('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosUpdat
 // Delete a credit infos
 Route::delete('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosDestroy']);
 
-//route pour type
+//route for type
 // List of all type
 Route::get('/type', [TypeController::class, 'typeIndex']);
 // Display one type
@@ -65,7 +71,7 @@ Route::put('/type/{id}', [TypeController::class, 'typeUpdate']);
 // Delete a type
 Route::delete('/type/{id}', [TypeController::class, 'typeDestroy']);
 
-//route pour vehicule
+//route for vehicule
 // List of all vehicule
 Route::get('/vehicule', [VehiculeController::class, 'vehiculeIndex']);
 // Display one vehicule
@@ -137,3 +143,63 @@ Route::post('/user', [VehiculeController::class, 'userStore']);
 Route::put('/user/{id}', [UserController::class, 'userUpdate']);
 // Delete a user
 Route::delete('/user/{id}', [UserController::class, 'userDestroy']);
+
+// Route for Brand
+// List of all brand
+Route::get('/brand', [BrandController::class, 'brandIndex']);
+// Display one brand
+Route::get('/brand/{id}', [BrandController::class, 'brandShow']);
+// Add brand
+Route::post('/brand', [BrandController::class, 'brandStore']);
+// Update a brand
+Route::put('/brand/{id}', [BrandController::class, 'brandUpdate']);
+// Delete a brand
+Route::delete('/brand/{id}', [BrandController::class, 'brandDestroy']);
+
+// Route for Status
+// List of all status
+Route::get('/status', [StatusController::class, 'statusIndex']);
+// Display one status
+Route::get('/status/{id}', [StatusController::class, 'statusShow']);
+// Add status
+Route::post('/status', [StatusController::class, 'statusStore']);
+// Update a status
+Route::put('/status/{id}', [StatusController::class, 'statusUpdate']);
+// Delete a status
+Route::delete('/status/{id}', [StatusController::class, 'statusDestroy']);
+
+// Route for LeavingVehicule
+// List of all leavingVehicule
+Route::get('/leavingVehicule', [LeavingVehiculeController::class, 'leavingVehiculeIndex']);
+// Display one leavingVehicule
+Route::get('/leavingVehicule/{id}', [LeavingVehiculeController::class, 'leavingVehiculeShow']);
+// Add leavingVehicule
+Route::post('/leavingVehicule', [LeavingVehiculeController::class, 'leavingVehiculeStore']);
+// Update a leavingVehicule
+Route::put('/leavingVehicule/{id}', [LeavingVehiculeController::class, 'leavingVehiculeUpdate']);
+// Delete a leavingVehicule
+Route::delete('/leavingVehicule/{id}', [LeavingVehiculeController::class, 'leavingVehiculeDestroy']);
+
+// Route for GearBoxe
+// List of all gearBoxe
+Route::get('/gearBoxe', [GearBoxeController::class, 'gearBoxeIndex']);
+// Display one gearBoxe
+Route::get('/gearBoxe/{id}', [GearBoxeController::class, 'gearBoxeShow']);
+// Add gearBoxe
+Route::post('/gearBoxe', [GearBoxeController::class, 'gearBoxeStore']);
+// Update a gearBoxe
+Route::put('/gearBoxe/{id}', [GearBoxeController::class, 'gearBoxeUpdate']);
+// Delete a gearBoxe
+Route::delete('/gearBoxe/{id}', [GearBoxeController::class, 'gearBoxeDestroy']);
+
+// Route for Article
+// List of all article
+Route::get('/article', [ArticleController::class, 'articleIndex']);
+// Display one article
+Route::get('/article/{id}', [ArticleController::class, 'articleShow']);
+// Add article
+Route::post('/article', [ArticleController::class, 'articleStore']);
+// Update a article
+Route::put('/article/{id}', [ArticleController::class, 'articleUpdate']);
+// Delete a article
+Route::delete('/article/{id}', [ArticleController::class, 'articleDestroy']);
