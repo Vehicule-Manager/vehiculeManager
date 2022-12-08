@@ -9,6 +9,7 @@ use App\Http\Controllers\CreditInfoController;
 use App\Http\Controllers\FamilySituationController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\ProfessionnalSituationController;
+use App\Http\Controllers\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -96,3 +97,27 @@ Route::post('/situation-professionnelle', [ProfessionnalSituationController::cla
 Route::put('/situation-professionnelle/{id}', [ProfessionnalSituationController::class, 'ProfessionnalSituationUpdate']);
 // Delete a Situation profesionnal
 Route::delete('/situation-professionnelle/{id}', [ProfessionnalSituationController::class, 'ProfessionnalSituationDestroy']);
+
+// Route for Media
+// List of all Media
+Route::get('/media', [MediaController::class, 'mediaIndex']);
+// Display one Media
+Route::get('/media/{id}', [MediaController::class, 'mediaShow']);
+// Add a new Media
+Route::post('/media', [MediaController::class, 'mediaStore']);
+// Edit a Media
+Route::put('/media/{id}', [MediaController::class, 'mediaUpdate']);
+// Delete a Media
+Route::delete('/media/{id}', [MediaController::class, 'mediaDestroy']);
+
+// Route for Employee
+// List of all Employee
+Route::get('/employee', [EmployeeController::class, 'employeeIndex']);
+// Display one Employee
+Route::get('/employee/{id}', [EmployeeController::class, 'employeeShow']);
+// Add a new Employee
+Route::post('/employee', [EmployeeController::class, 'employeeStore']);
+// Edit a Employee
+Route::put('/employee/{id}', [EmployeeController::class, 'employeeUpdate']);
+// Delete a Employee
+Route::delete('/employee/{id}', [EmployeeController::class, 'employeeDestroy']);
