@@ -12,7 +12,6 @@ use App\Http\Controllers\ProfessionnalSituationController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SubjectController;
 
 /*

@@ -10,6 +10,11 @@ class TypeController extends Controller
 {
     public function typeStore(Request $request)
     {
+        $type = new type();
+
+        $type->name = 'test';
+
+        $type->save();
         return response()->json();
     }
 
@@ -21,7 +26,7 @@ class TypeController extends Controller
 
     public function typeShow($id)
     {
-        $type = DB::table('types')->select('name')->where('id','=', $id)->get();
+        $type = DB::table('types')->select('name')->where('id', '=', $id)->get();
         return response()->json($type);
     }
 
@@ -32,7 +37,7 @@ class TypeController extends Controller
 
     public function typeDestroy($id)
     {
-        $type = DB::table('types')->where('id','=',$id)->delete();
+        $type = DB::table('types')->where('id', '=', $id)->delete();
         return response()->json($type);
     }
 }
