@@ -12,7 +12,6 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\SubjectController;
-<<<<<<< Updated upstream
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\GearBoxeController;
@@ -20,9 +19,7 @@ use App\Http\Controllers\LeavingVehiculeController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\VehiculeController;
-=======
 use App\Http\Controllers\RoleController;
->>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -148,7 +145,6 @@ Route::put('/user/{id}', [UserController::class, 'userUpdate']);
 // Delete a user
 Route::delete('/user/{id}', [UserController::class, 'userDestroy']);
 
-<<<<<<< Updated upstream
 // Route for Brand
 // List of all brand
 Route::get('/brand', [BrandController::class, 'brandIndex']);
@@ -208,7 +204,7 @@ Route::post('/article', [ArticleController::class, 'articleStore']);
 Route::put('/article/{id}', [ArticleController::class, 'articleUpdate']);
 // Delete a article
 Route::delete('/article/{id}', [ArticleController::class, 'articleDestroy']);
-=======
+
 // Route for Subject
 // List of all subjects
 Route::get('/subject', [SubjectController::class, 'subjectIndex']);
@@ -244,4 +240,3 @@ Route::post('/role', [RoleController::class, 'roleStore']);
 Route::put('/role/{id}', [RoleController::class, 'roleUpdate']);
 // Delete a role
 Route::delete('/role/{id}', [RoleController::class, 'roleDestroy']);
->>>>>>> Stashed changes
