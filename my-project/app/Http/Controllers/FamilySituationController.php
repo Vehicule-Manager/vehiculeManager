@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class FamilySituationController extends Controller
 {
+    public function familySituationStore(Request $request)
+    {
+        return response()->json();
+    }
 
     /**
      * @OA\Get(
@@ -41,8 +45,15 @@ class FamilySituationController extends Controller
      *      description="not found"
      *   ),
      *  )
-     
+     */
 
+    public function familySituationIndex()
+    {
+        $familySituation = familySituation::all();
+        return response()->json($familySituation);
+    }
+
+    /**
      * @OA\Get(
      *      path="/situation-familiale/{id}",
      *      operationId="familySituationShow",
@@ -81,8 +92,20 @@ class FamilySituationController extends Controller
      *      description="not found"
      *   ),
      *  )
-     
+     */
 
+    public function familySituationShow($id)
+    {
+        $familySituation = DB::table('family_situations')->select('name','numberOfChild')->where('id', '=', $id)->get();
+        return response()->json($familySituation);
+    }
+
+    public function familySituationUpdate($id, Request $request)
+    {
+        return response()->json();
+    }
+
+    /**
      * @OA\Delete(
      *      path="/situation-familiale/{id}",
      *      operationId="familySituationDestroy",
@@ -122,28 +145,6 @@ class FamilySituationController extends Controller
      *   ),
      *  )
      */
-
-    public function familySituationStore(Request $request)
-    {
-        return response()->json();
-    }
-
-    public function familySituationIndex()
-    {
-        $familySituation = familySituation::all();
-        return response()->json($familySituation);
-    }
-
-    public function familySituationShow($id)
-    {
-        $familySituation = DB::table('family_situations')->select('name','numberOfChild')->where('id', '=', $id)->get();
-        return response()->json($familySituation);
-    }
-
-    public function familySituationUpdate($id, Request $request)
-    {
-        return response()->json();
-    }
 
     public function familySituationDestroy($id)
     {

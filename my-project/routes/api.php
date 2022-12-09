@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\EnergieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
@@ -240,3 +241,15 @@ Route::post('/role', [RoleController::class, 'roleStore']);
 Route::put('/role/{id}', [RoleController::class, 'roleUpdate']);
 // Delete a role
 Route::delete('/role/{id}', [RoleController::class, 'roleDestroy']);
+
+// Route for Energie
+// List of all energies
+Route::get('/energie', [EnergieController::class, 'energieIndex']);
+// Display one energie
+Route::get('/energie/{id}', [EnergieController::class, 'energieShow']);
+// Add a energie
+Route::post('/energie', [EnergieController::class, 'energieStore']);
+// Update a energie
+Route::put('/energie/{id}', [EnergieController::class, 'energieUpdate']);
+// Delete a energie
+Route::delete('/energie/{id}', [EnergieController::class, 'energieDestroy']);

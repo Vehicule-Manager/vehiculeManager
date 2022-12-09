@@ -8,8 +8,12 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
+    public function employeeStore(Request $request)
+    {
+        return response()->json();
+    }
 
-/**
+    /**
      * @OA\Get(
      *      path="/employee",
      *      operationId="employeeIndex",
@@ -41,8 +45,15 @@ class EmployeeController extends Controller
      *      description="not found"
      *   ),
      *  )
-     
+     */
 
+    public function employeeIndex()
+    {
+        $employee = Employee::all();
+        return response()->json($employee);
+    }
+
+    /**
      * @OA\Get(
      *      path="/employee/{id}",
      *      operationId="employeeShow",
@@ -81,8 +92,20 @@ class EmployeeController extends Controller
      *      description="not found"
      *   ),
      *  )
-     
+     */
 
+    public function employeeShow($id)
+    {
+        $employee = DB::table('employees')->select('firstname','lastname','job','id_users')->where('id', '=', $id)->get();
+        return response()->json($employee);
+    }
+
+    public function employeeUpdate($id, Request $request)
+    {
+        return response()->json();
+    }
+
+    /**
      * @OA\Delete(
      *      path="/employee/{id}",
      *      operationId="employeeDestroy",
@@ -122,28 +145,6 @@ class EmployeeController extends Controller
      *   ),
      *  )
      */
-
-    public function employeeStore(Request $request)
-    {
-        return response()->json();
-    }
-
-    public function employeeIndex()
-    {
-        $employee = Employee::all();
-        return response()->json($employee);
-    }
-
-    public function employeeShow($id)
-    {
-        $employee = DB::table('employees')->select('firstname','lastname','job','id_users')->where('id', '=', $id)->get();
-        return response()->json($employee);
-    }
-
-    public function employeeUpdate($id, Request $request)
-    {
-        return response()->json();
-    }
 
     public function employeeDestroy($id)
     {

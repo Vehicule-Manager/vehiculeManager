@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class CreditInfoController extends Controller
 {
+    public function creditInfosStore(Request $request)
+    {
+        return response()->json();
+    }
+
     /**
      * @OA\Get(
      *      path="/credit-infos",
@@ -40,8 +45,15 @@ class CreditInfoController extends Controller
      *      description="not found"
      *   ),
      *  )
-     
+     */
 
+    public function creditInfosIndex()
+    {
+        $creditInfo = CreditInfo::all();
+        return response()->json($creditInfo);
+    }
+
+    /**
      * @OA\Get(
      *      path="/credit-infos/{id}",
      *      operationId="creditInfosShow",
@@ -80,8 +92,20 @@ class CreditInfoController extends Controller
      *      description="not found"
      *   ),
      *  )
-     
+     */
 
+    public function creditInfosShow($id)
+    {
+        $creditInfo = DB::table('credit_infos')->select('placeOfBirth', 'nationality', 'budgets', 'contract', 'contractDate', 'banquet', 'professionnalStatus', 'familysituation')->where('id', '=', $id)->get();
+        return response()->json($creditInfo);
+    }
+
+    public function creditInfosUpdate($id, Request $request)
+    {
+        return response()->json();
+    }
+
+    /**
      * @OA\Delete(
      *      path="/credit-infos/{id}",
      *      operationId="creditInfosDestroy",
@@ -121,28 +145,6 @@ class CreditInfoController extends Controller
      *   ),
      *  )
      */
-
-    public function creditInfosStore(Request $request)
-    {
-        return response()->json();
-    }
-
-    public function creditInfosIndex()
-    {
-        $creditInfo = CreditInfo::all();
-        return response()->json($creditInfo);
-    }
-
-    public function creditInfosShow($id)
-    {
-        $creditInfo = DB::table('credit_infos')->select('placeOfBirth', 'nationality', 'budgets', 'contract', 'contractDate', 'banquet', 'professionnalStatus', 'familysituation')->where('id', '=', $id)->get();
-        return response()->json($creditInfo);
-    }
-
-    public function creditInfosUpdate($id, Request $request)
-    {
-        return response()->json();
-    }
 
     public function creditInfosDestroy($id)
     {

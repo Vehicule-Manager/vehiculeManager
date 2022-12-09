@@ -8,8 +8,12 @@ use Illuminate\Http\Request;
 
 class ProfessionnalSituationController extends Controller
 {
-   
-   /**
+    public function ProfessionnalSituationStore(Request $request)
+    {
+        return response()->json();
+    }
+
+    /**
      * @OA\Get(
      *      path="/situation-professionnelle",
      *      operationId="ProfessionnalSituationIndex",
@@ -41,8 +45,15 @@ class ProfessionnalSituationController extends Controller
      *      description="not found"
      *   ),
      *  )
-     
+     */
 
+    public function ProfessionnalSituationIndex()
+    {
+        $ProfessionnalSituation = ProfessionnalSituation::all();
+        return response()->json($ProfessionnalSituation);
+    }
+
+    /**
      * @OA\Get(
      *      path="/situation-professionnelle/{id}",
      *      operationId="ProfessionnalSituationShow",
@@ -81,8 +92,20 @@ class ProfessionnalSituationController extends Controller
      *      description="not found"
      *   ),
      *  )
-     
+     */
 
+    public function ProfessionnalSituationShow($id)
+    {
+        $ProfessionnalSituation = DB::table('professionnal_situations')->select('name')->where('id', '=', $id)->get();
+        return response()->json($ProfessionnalSituation);
+    }
+
+    public function ProfessionnalSituationUpdate($id, Request $request)
+    {
+        return response()->json();
+    }
+
+    /**
      * @OA\Delete(
      *      path="/situation-professionnelle/{id}",
      *      operationId="ProfessionnalSituationDestroy",
@@ -122,28 +145,6 @@ class ProfessionnalSituationController extends Controller
      *   ),
      *  )
      */
-   
-    public function ProfessionnalSituationStore(Request $request)
-    {
-        return response()->json();
-    }
-
-    public function ProfessionnalSituationIndex()
-    {
-        $ProfessionnalSituation = ProfessionnalSituation::all();
-        return response()->json($ProfessionnalSituation);
-    }
-
-    public function ProfessionnalSituationShow($id)
-    {
-        $ProfessionnalSituation = DB::table('professionnal_situations')->select('name')->where('id', '=', $id)->get();
-        return response()->json($ProfessionnalSituation);
-    }
-
-    public function ProfessionnalSituationUpdate($id, Request $request)
-    {
-        return response()->json();
-    }
 
     public function ProfessionnalSituationDestroy($id)
     {
