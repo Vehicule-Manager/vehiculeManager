@@ -27,6 +27,8 @@
  - Push la branche : git push -u origin main
  
  - Pour naviguer entrer les branches github : git checkout < nom de la branche >
+
+ - Commande pour generate swagger : sudo docker-compose run myapp php artisan l5-swagger:generate
  
   
 
