@@ -8,6 +8,120 @@ use Illuminate\Http\Request;
 
 class CreditInfoController extends Controller
 {
+    /**
+     * @OA\Get(
+     *      path="/credit-infos",
+     *      operationId="creditInfosIndex",
+     *      tags={"credit infos"},
+
+     *      summary="Get List Of credit infos",
+     *      description="Return the list credit infos",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     
+
+     * @OA\Get(
+     *      path="/credit-infos/{id}",
+     *      operationId="creditInfosShow",
+     *      tags={"credit infos"},
+     *      summary="Get a one credit infos",
+     *      description="Returns a one credit infos",
+     *@OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     
+
+     * @OA\Delete(
+     *      path="/credit-infos/{id}",
+     *      operationId="creditInfosDestroy",
+     *      tags={"credit infos"},
+     *      summary="Delete a one credit infos",
+     *      description="Returns a one credit infos",
+     *@OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
+
     public function creditInfosStore(Request $request)
     {
         return response()->json();

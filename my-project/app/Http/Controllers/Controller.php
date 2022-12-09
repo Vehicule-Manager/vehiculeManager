@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
     /**
      * @OA\Info(
      *      version="1.0.0",
-     *      title="Api covid19 Documentation",
+     *      title="Documentation API vehicule manager",
      *      description="Implementation of Swagger with in Laravel",
      *      @OA\Contact(
      *          email="admin@admin.com"

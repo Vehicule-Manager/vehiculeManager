@@ -8,6 +8,121 @@ use Illuminate\Http\Request;
 
 class ProfessionnalSituationController extends Controller
 {
+   
+   /**
+     * @OA\Get(
+     *      path="/situation-professionnelle",
+     *      operationId="ProfessionnalSituationIndex",
+     *      tags={"situation professionnelle"},
+
+     *      summary="Get List Of Professionnal Situation",
+     *      description="Return the list Professionnal Situation",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     
+
+     * @OA\Get(
+     *      path="/situation-professionnelle/{id}",
+     *      operationId="ProfessionnalSituationShow",
+     *      tags={"situation professionnelle"},
+     *      summary="Get a one Professionnal Situation",
+     *      description="Returns a one Professionnal Situation",
+     *@OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     
+
+     * @OA\Delete(
+     *      path="/situation-professionnelle/{id}",
+     *      operationId="ProfessionnalSituationDestroy",
+     *      tags={"situation professionnelle"},
+     *      summary="Delete a one Professionnal Situation",
+     *      description="Returns a one Professionnal Situation",
+     *@OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
+   
     public function ProfessionnalSituationStore(Request $request)
     {
         return response()->json();

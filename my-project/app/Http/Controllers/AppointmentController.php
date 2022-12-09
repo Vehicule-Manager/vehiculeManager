@@ -8,6 +8,121 @@ use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
+
+    /**
+     * @OA\Get(
+     *      path="/appointment",
+     *      operationId="appointmentIndex",
+     *      tags={"rendez vous"},
+
+     *      summary="Get List Of appointment",
+     *      description="Return the list appointment",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     
+
+     * @OA\Get(
+     *      path="/appointment/{id}",
+     *      operationId="appointmentShow",
+     *      tags={"rendez vous"},
+     *      summary="Get a one appointment",
+     *      description="Returns a one appointment",
+     *@OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     
+
+     * @OA\Delete(
+     *      path="/appointment/{id}",
+     *      operationId="appointmentDestroy",
+     *      tags={"rendez vous"},
+     *      summary="Delete a one appointment",
+     *      description="Returns a one appointment",
+     *@OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
+
     public function appointmentStore(Request $request)
     {
         return response()->json();
@@ -32,7 +147,7 @@ class AppointmentController extends Controller
 
     public function appointmentDestroy($id)
     {
-        $appointment = DB::table('appointments')->where('id','=',$id)->delete();
+        $appointment = DB::table('appointments')->where('id', '=', $id)->delete();
         return response()->json($appointment);
     }
 }
