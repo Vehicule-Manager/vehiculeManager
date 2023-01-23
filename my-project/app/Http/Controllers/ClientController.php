@@ -55,7 +55,7 @@ class ClientController extends Controller
      * @OA\Get(
      *      path="/client/{id}",
      *      operationId="clientShow",
-     *      tags={"rendez vous"},
+     *      tags={"clients"},
      *      summary="Get a one client",
      *      description="Returns a one client",
      *@OA\Parameter(
@@ -107,7 +107,7 @@ class ClientController extends Controller
      * @OA\Delete(
      *      path="/client/{id}",
      *      operationId="clientDestroy",
-     *      tags={"rendez vous"},
+     *      tags={"clients"},
      *      summary="Delete a one client",
      *      description="Returns a one client",
      *@OA\Parameter(

@@ -108,7 +108,7 @@ class RoleController extends Controller
      * @OA\Delete(
      *      path="/role/{id}",
      *      operationId="roleDestroy",
-     *      tags={"rendez vous"},
+     *      tags={"role"},
      *      summary="Delete a one role",
      *      description="Returns a one role",
      *@OA\Parameter(

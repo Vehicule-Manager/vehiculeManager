@@ -111,7 +111,7 @@ class UserController extends Controller
      * @OA\Delete(
      *      path="/user/{id}",
      *      operationId="userDestroy",
-     *      tags={"rendez vous"},
+     *      tags={"user"},
      *      summary="Delete a one user",
      *      description="Returns a one user",
      *@OA\Parameter(
