@@ -14,6 +14,39 @@ class UserController extends Controller
     {
         return response()->json();
     }
+    /**
+     * @OA\Get(
+     *      path="/user",
+     *      operationId="userIndex",
+     *      tags={"user"},
+
+     *      summary="Get List Of user",
+     *      description="Return the list user",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
 
     // Récupérer toutes les informations relatives aux utilisateurs
     public function userIndex()
@@ -21,6 +54,47 @@ class UserController extends Controller
         $user = user::all();
         return response()->json($user);
     }
+
+    /**
+     * @OA\Get(
+     *      path="/user/{id}",
+     *      operationId="userShow",
+     *      tags={"user"},
+     *      summary="Get a one user",
+     *      description="Returns a one user",
+     *@OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
 
     // Récupérer les informations d'un utilisateur
     public function userShow($id)
@@ -33,6 +107,46 @@ class UserController extends Controller
     {
         return response()->json();
     }
+    /**
+     * @OA\Delete(
+     *      path="/user/{id}",
+     *      operationId="userDestroy",
+     *      tags={"rendez vous"},
+     *      summary="Delete a one user",
+     *      description="Returns a one user",
+     *@OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
 
     public function userDestroy($id)
     {
