@@ -30,7 +30,7 @@
 
  - Commande pour generate swagger : sudo docker-compose run myapp php artisan l5-swagger:generate
  
- -Commande pour générer les seeders : docker compose run myapp php artisan db:seed
+ - Commande pour générer les seeders : docker compose run myapp php artisan db:seed
 
   
 
