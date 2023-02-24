@@ -22,6 +22,7 @@ use App\Models\Article;
 use App\Models\VehiculeByArticle;
 use App\Models\FamilySituation;
 use App\Models\ProfessionnalSituation;
+use App\Models\ModelCar;
 
 class DatabaseSeeder extends Seeder
 {
@@ -41,6 +42,7 @@ class DatabaseSeeder extends Seeder
         Role::factory(5)->create();
         User::factory(5)->create();
         Client::factory(5)->create();
+        ModelCar::factory(5)->create();
         Vehicule::factory(5)->create();
         Subject::factory(5)->create();
         Media::factory(5)->create();
@@ -51,5 +53,6 @@ class DatabaseSeeder extends Seeder
         VehiculeByArticle::factory(5)->create();
         FamilySituation::factory(5)->create();
         ProfessionnalSituation::factory(5)->create();
+        
     }
 }

@@ -2,155 +2,155 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Vehicule;
+use App\Models\ModelCar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class VehiculeController extends Controller
+class ModelCarController extends Controller
 {
-    public function vehiculeStore(Request $request)
+    public function modeleStore(Request $request)
     {
         return response()->json();
     }
 
     /**
-     * @OA\Get(
-     *      path="/vehicule",
-     *      operationId="vehiculeIndex",
-     *      tags={"vehicule"},
+     * @OA\Get (
+     *      path="/model",
+     *      operationId="modelIndex",
+     *      tags={"model"},
 
-     *      summary="Get List Of Vehicule",
-     *      description="Returns all vehicule",
-     *      @OA\Response(
+     *      summary="Get Of model",
+     *      description="Returns the model",
+     *      @OA\Response (
      *          response=200,
      *          description="Successful operation",
-     *          @OA\MediaType(
+     *          @OA\MediaType (
      *           mediaType="application/json",
      *      )
      *      ),
-     *      @OA\Response(
+     *      @OA\Response (
      *          response=401,
      *          description="Unauthenticated",
      *      ),
-     *      @OA\Response(
+     *      @OA\Response (
      *          response=403,
      *          description="Forbidden"
      *      ),
-     * @OA\Response(
+     * @OA\Response (
      *      response=400,
      *      description="Bad Request"
      *   ),
-     * @OA\Response(
+     * @OA\Response (
      *      response=404,
      *      description="not found"
      *   ),
      *  )
      */
 
-    public function vehiculeIndex()
+    public function modelIndex()
     {
-        $vehicule = Vehicule::all();
-        return response()->json($vehicule);
+        $model = ModelCar::all();
+        return response()->json($model);
     }
 
     /**
-     * @OA\Get(
-     *      path="/vehicule/{id}",
-     *      operationId="vehiculeShow",
-     *      tags={"vehicule"},
+     * @OA\Get (
+     *      path="/model/{id}",
+     *      operationId="modelShow",
+     *      tags={"model"},
 
-     *      summary="Get Of Vehicule",
-     *      description="Returns the vehicule",
-     *     @OA\Parameter(
+     *      summary="Get Of model",
+     *      description="Returns the model",
+     *     @OA\Parameter (
      *      name="id",
      *      in="path",
      *      required=true,
-     *      @OA\Schema(
+     *      @OA\Schema (
      *           type="integer"
      *      )
      *   ),
-     *      @OA\Response(
+     *      @OA\Response (
      *          response=200,
      *          description="Successful operation",
-     *          @OA\MediaType(
+     *          @OA\MediaType (
      *           mediaType="application/json",
      *      )
      *      ),
-     *      @OA\Response(
+     *      @OA\Response (
      *          response=401,
      *          description="Unauthenticated",
      *      ),
-     *      @OA\Response(
+     *      @OA\Response (
      *          response=403,
      *          description="Forbidden"
      *      ),
-     * @OA\Response(
+     * @OA\Response (
      *      response=400,
      *      description="Bad Request"
      *   ),
-     * @OA\Response(
+     * @OA\Response (
      *      response=404,
      *      description="not found"
      *   ),
      *  )
      */
-    public function vehiculeShow($id)
+
+    public function modelShow($id)
     {
-        $vehicule = DB::table('vehicules')->select('new','firstDateCicrulate','description','horsepower',
-            'price','enterDate','leavingDate', 'immatriculation','id_statuses','id_clients','id_gear_boxes','id_brands',
-            'id_energies','id_types','id_model_car')->where('id', '=', $id)->get();
-        return response()->json($vehicule);
+        $model = DB::table('model_car')->select('name')->where('id', '=', $id)->get();
+        return response()->json($model);
     }
 
-    public function vehiculeUpdate($id, Request $request)
+    public function modelUpdate($id, Request $request)
     {
         return response()->json();
     }
 
     /**
-     * @OA\Delete(
-     *      path="/vehicule/{id}",
-     *      operationId="vehiculeDestroy",
-     *      tags={"vehicule"},
+     * @OA\Delete (
+     *      path="/model/{id}",
+     *      operationId="modelDestroy",
+     *      tags={"model"},
 
-     *      summary="Get Of Vehicule",
-     *      description="Returns the vehicule",
-     *     @OA\Parameter(
+     *      summary="Get Of model",
+     *      description="Returns the model",
+     *     @OA\Parameter (
      *      name="id",
      *      in="path",
      *      required=true,
-     *      @OA\Schema(
+     *      @OA\Schema (
      *           type="integer"
      *      )
      *   ),
-     *      @OA\Response(
+     *      @OA\Response (
      *          response=200,
      *          description="Successful operation",
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
-     *      @OA\Response(
+     *      @OA\Response (
      *          response=401,
      *          description="Unauthenticated",
      *      ),
-     *      @OA\Response(
+     *      @OA\Response (
      *          response=403,
      *          description="Forbidden"
      *      ),
-     * @OA\Response(
+     * @OA\Response (
      *      response=400,
      *      description="Bad Request"
      *   ),
-     * @OA\Response(
+     * @OA\Response (
      *      response=404,
      *      description="not found"
      *   ),
      *  )
      */
-    public function vehiculeDestroy($id)
+
+    public function modelDestroy($id)
     {
-        $vehicule = DB::table('vehicules')->where('id','=',$id)->delete();
-        return response()->json($vehicule);
+        $model = DB::table('model_car')->where('id','=',$id)->delete();
+        return response()->json($model);
     }
 }

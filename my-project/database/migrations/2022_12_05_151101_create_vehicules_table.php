@@ -22,13 +22,14 @@ return new class extends Migration
             $table->float('price');
             $table->date('enterDate');
             $table->date('leavingDate');
-            $table->string('immatriculation','10');
+            $table->string('immatriculation', '10');
             $table->integer('id_statuses')->unsigned();
             $table->integer('id_clients')->unsigned();
             $table->integer('id_gear_boxes')->unsigned();
             $table->integer('id_brands')->unsigned();
             $table->integer('id_energies')->unsigned();
             $table->integer('id_types')->unsigned();
+            $table->integer('id_model_car')->unsigned();
             $table->timestamps();
         });
 
@@ -67,6 +68,12 @@ return new class extends Migration
                 ->foreign('id_types')
                 ->references('id')
                 ->on('types')
+                ->onDelete('cascade');
+
+            $table
+                ->foreign('id_model_car')
+                ->references('id')
+                ->on('model_car')
                 ->onDelete('cascade');
         });
     }

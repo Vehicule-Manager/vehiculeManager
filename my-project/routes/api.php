@@ -21,6 +21,7 @@ use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\VehiculeController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ModelCarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -253,3 +254,15 @@ Route::post('/energie', [EnergieController::class, 'energieStore']);
 Route::put('/energie/{id}', [EnergieController::class, 'energieUpdate']);
 // Delete a energie
 Route::delete('/energie/{id}', [EnergieController::class, 'energieDestroy']);
+
+// Route for Model car
+// List of all modele car
+Route::get('/model', [ModelCarController::class, 'modelIndex']);
+// Display one modele car
+Route::get('/model/{id}', [ModelCarController::class, 'modelShow']);
+// Add a modele car
+Route::post('/model', [ModelCarController::class, 'modeleStore']);
+// Update a modele car
+Route::put('/model{id}', [ModelCarController::class, 'modelUpdate']);
+// Delete a modele car
+Route::delete('/model/{id}', [ModelCarController::class, 'modelDestroy']);

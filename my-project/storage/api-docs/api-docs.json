@@ -14,7 +14,7 @@
     },
     "servers": [
         {
-            "url": "http://my-default-host.com",
+            "url": "http://127.0.0.1:8000/api",
             "description": "Demo API Server"
         }
     ],
@@ -376,7 +376,7 @@
         "/client/{id}": {
             "get": {
                 "tags": [
-                    "rendez vous"
+                    "clients"
                 ],
                 "summary": "Get a one client",
                 "description": "Returns a one client",
@@ -414,7 +414,7 @@
             },
             "delete": {
                 "tags": [
-                    "rendez vous"
+                    "clients"
                 ],
                 "summary": "Delete a one client",
                 "description": "Returns a one client",
@@ -1207,6 +1207,114 @@
                 }
             }
         },
+        "/model": {
+            "get": {
+                "tags": [
+                    "model"
+                ],
+                "summary": "Get Of model",
+                "description": "Returns the model",
+                "operationId": "modelIndex",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/model/{id}": {
+            "get": {
+                "tags": [
+                    "model"
+                ],
+                "summary": "Get Of model",
+                "description": "Returns the model",
+                "operationId": "modelShow",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "model"
+                ],
+                "summary": "Get Of model",
+                "description": "Returns the model",
+                "operationId": "modelDestroy",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
         "/situation-professionnelle": {
             "get": {
                 "tags": [
@@ -1386,7 +1494,7 @@
             },
             "delete": {
                 "tags": [
-                    "rendez vous"
+                    "role"
                 ],
                 "summary": "Delete a one role",
                 "description": "Returns a one role",
@@ -1710,7 +1818,7 @@
             },
             "delete": {
                 "tags": [
-                    "rendez vous"
+                    "user"
                 ],
                 "summary": "Delete a one user",
                 "description": "Returns a one user",

@@ -9,6 +9,7 @@ use App\Models\Energie;
 use App\Models\GearBoxe;
 use App\Models\Status;
 use App\Models\Type;
+use App\Models\ModelCar;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Vehicule>
@@ -37,6 +38,7 @@ class VehiculeFactory extends Factory
             'id_brands' => Brand::all()->random()->id,
             'id_energies' => Energie::all()->random()->id,
             'id_types' => Type::all()->random()->id,
+            'id_model_car' => ModelCar::all()->random()->id,
         ];
     }
 }
