@@ -88,13 +88,33 @@ class DatabaseSeeder extends Seeder
         Client::factory(5)->create();
 
         // Seeder Modele de voiture
-        $modelCars = array("scenic", "clio", "megane", "208", "3008", "508", "c4", "c5", "c2", "corsa", "320d", "serie1", "fiesta", "golf", "polo", "tirok", "a3", "a4",);
+        $modelCars = [
+            ["name"=> 'scenic', 'id_brands'=> '1'],
+            ["name"=> 'clio', 'id_brands'=> '1'],
+            ["name"=> 'megane', 'id_brands'=> '1'],
+            ["name"=> '208', 'id_brands'=> '2'],
+            ["name"=> '3008', 'id_brands'=> '2'],
+            ["name"=> '508', 'id_brands'=> '2'],
+            ["name"=> 'c4', 'id_brands'=> '3'],
+            ["name"=> 'c5', 'id_brands'=> '3'],
+            ["name"=> 'c2', 'id_brands'=> '3'],
+            ["name"=> 'corsa', 'id_brands'=> '4'],
+            ["name"=> '320d', 'id_brands'=> '5'],
+            ["name"=> 'serie1', 'id_brands'=> '5'],
+            ["name"=> 'fiesta', 'id_brands'=> '7'],
+            ["name"=> 'golf', 'id_brands'=> '9'],
+            ["name"=> 'polo', 'id_brands'=> '9'],
+            ["name"=> 'tirok', 'id_brands'=> '9'],
+            ["name"=> 'a3', 'id_brands'=> '10'],
+            ["name"=> 'a4', 'id_brands'=> '10']
+        ];
         foreach ($modelCars as $name) {
             $create = new ModelCar;
-            $create->name = $name;
+            $create->name = $name['name'];
+            $create->id_brands= $name['id_brands'];
             $create->save();
         }
-
+//        ModelCar::factory(5)->create();
         Vehicule::factory(5)->create();
         Subject::factory(5)->create();
         Media::factory(5)->create();

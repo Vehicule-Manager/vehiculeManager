@@ -12,5 +12,5 @@ class ModelCar extends Model
     use HasFactory;
 
     protected $table = 'model_car';
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'id_brands'];
 }
