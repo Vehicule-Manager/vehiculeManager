@@ -16,6 +16,7 @@ class ModelCarFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
+            'id_brands' => $this->faker->randomNumber(),
         ];
     }
 }
