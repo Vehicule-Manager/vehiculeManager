@@ -97,7 +97,7 @@ class ArticleController extends Controller
 
     public function articleShow($id)
     {
-        $article = DB::table('articles')->select('name')->where('id', '=', $id)->get();
+        $article = DB::table('articles')->select('title', 'content')->where('id', '=', $id)->get();
         return response()->json($article);
     }
 
