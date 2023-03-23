@@ -84,7 +84,7 @@ class DatabaseSeeder extends Seeder
             $create->save();
         }
 
-        User::factory(5)->create();
+        User::factory(15)->create();
         Client::factory(5)->create();
 
         // Seeder Modele de voiture
@@ -115,14 +115,14 @@ class DatabaseSeeder extends Seeder
             $create->save();
         }
 //        ModelCar::factory(5)->create();
-        Vehicule::factory(5)->create();
+        Vehicule::factory(50)->create();
         Subject::factory(5)->create();
         Media::factory(5)->create();
         Employee::factory(5)->create();
         Appointment::factory(5)->create();
         LeavingVehicule::factory(5)->create();
-        Article::factory(5)->create();
-        VehiculeByArticle::factory(5)->create();
+        Article::factory(25)->create();
+        VehiculeByArticle::factory(15)->create();
         FamilySituation::factory(5)->create();
         ProfessionnalSituation::factory(5)->create();
     }
