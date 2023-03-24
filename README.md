@@ -10,7 +10,7 @@
    Migration
    
 - Créer un model + migration : docker-compose run myapp php artisan make:model < nom du model > -m
-- Faire un migrate : docker-compose run myapp php artisan migrate
+- Faire un migrate : docker-compose run laravel php artisan migrate
  
 ### ![MariaDB](https://img.shields.io/badge/MariaDB-black?style=flat-square&logo=mariadb) Commandes MariaDB
 
@@ -28,9 +28,9 @@
  
  - Pour naviguer entrer les branches github : git checkout < nom de la branche >
 
- - Commande pour generate swagger : sudo docker-compose run myapp php artisan l5-swagger:generate
+ - Commande pour generate swagger : sudo docker-compose run laravel php artisan l5-swagger:generate
  
- - Commande pour générer les seeders : docker compose run myapp php artisan db:seed
+ - Commande pour générer les seeders : docker compose run laravel php artisan db:seed
 
   
 
