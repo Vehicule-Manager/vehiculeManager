@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 use App\Models\Vehicule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -49,8 +51,11 @@ class VehiculeController extends Controller
 
     public function vehiculeIndex()
     {
-        $vehicule = Vehicule::all();
-        return response()->json($vehicule);
+        $vehicules = QueryBuilder::for(Vehicule::class)
+            ->allowedFilters(AllowedFilter::exact('id_model_car'),AllowedFilter::exact('horsepower'), AllowedFilter::exact('id_statuses'), AllowedFilter::exact('id_clients'), AllowedFilter::exact('id_gear_boxes'), AllowedFilter::exact('id_brands'), AllowedFilter::exact('id_energies'), AllowedFilter::exact('id_types')) // Add the filters you want to allow, e.g., make, model, year
+            ->paginate(9);
+
+        return response()->json($vehicules);
     }
 
     /**
