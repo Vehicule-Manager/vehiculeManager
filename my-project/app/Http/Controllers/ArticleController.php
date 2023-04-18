@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Spatie\QueryBuilder\QueryBuilder;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -49,7 +50,8 @@ class ArticleController extends Controller
 
     public function articleIndex()
     {
-        $article = Article::all();
+        $article = QueryBuilder::for(Article::class)
+            ->paginate(12);
         return response()->json($article);
     }
 
@@ -150,7 +152,7 @@ class ArticleController extends Controller
 
     public function brandDestroy($id)
     {
-        $article = DB::table('articles')->where('id','=',$id)->delete();
+        $article = DB::table('articles')->where('id', '=', $id)->delete();
         return response()->json($article);
     }
 }
