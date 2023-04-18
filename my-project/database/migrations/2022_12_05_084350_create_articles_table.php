@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title',50);
             $table->text('content');
             $table->timestamps();
+            $table->integer('likes_number');
         });
     }
 

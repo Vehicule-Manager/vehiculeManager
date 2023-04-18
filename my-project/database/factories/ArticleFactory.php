@@ -16,6 +16,7 @@ class ArticleFactory extends Factory
         return [
             'title' => $this->faker->word(),
             'content' => $this->faker->text(100),
+            'likes_number' => $this->faker->randomNumber(3)
         ];
     }
 }
