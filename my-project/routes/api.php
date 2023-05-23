@@ -182,6 +182,8 @@ Route::post('/leavingVehicule', [LeavingVehiculeController::class, 'leavingVehic
 Route::put('/leavingVehicule/{id}', [LeavingVehiculeController::class, 'leavingVehiculeUpdate']);
 // Delete a leavingVehicule
 Route::delete('/leavingVehicule/{id}', [LeavingVehiculeController::class, 'leavingVehiculeDestroy']);
+// Display one leavingVehicule for client
+Route::get('/leavingVehicule/client/{id_clients}', [LeavingVehiculeController::class, 'leasingVehiclesByClientId']);
 
 // Route for GearBoxe
 // List of all gearBoxe
