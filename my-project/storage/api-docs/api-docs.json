@@ -1099,6 +1099,46 @@
                 }
             }
         },
+        "/leavingVehicule/client/{$clientId}": {
+            "get": {
+                "tags": [
+                    "leavingVehicule"
+                ],
+                "summary": "Get Of LeavingVehicule Client",
+                "description": "Returns the leavingVehicule",
+                "operationId": "leasingVehiclesByClientId",
+                "parameters": [
+                    {
+                        "name": "id_clients",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
         "/medias": {
             "get": {
                 "tags": [

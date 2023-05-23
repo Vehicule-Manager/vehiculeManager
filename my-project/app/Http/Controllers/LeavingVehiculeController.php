@@ -153,4 +153,55 @@ class LeavingVehiculeController extends Controller
         $leavingVehicule = DB::table('leaving_vehicules')->where('id','=',$id)->delete();
         return response()->json($leavingVehicule);
     }
+
+    /**
+     * @OA\Get (
+     *      path="/leavingVehicule/client/{$clientId}",
+     *      operationId="leasingVehiclesByClientId",
+     *      tags={"leavingVehicule"},
+
+     *      summary="Get Of LeavingVehicule Client",
+     *      description="Returns the leavingVehicule",
+     *     @OA\Parameter(
+     *      name="id_clients",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
+
+    public function leasingVehiclesByClientId($clientId)
+    {
+        $leasingVehicles = DB::table('leaving_vehicules')
+            ->where('id_clients', '=', $clientId)
+            ->get();
+
+        return response()->json($leasingVehicles);
+    }
 }
