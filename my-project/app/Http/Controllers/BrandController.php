@@ -15,7 +15,7 @@ class BrandController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/brand",
+     *      path="/brands",
      *      operationId="brandIndex",
      *      tags={"brand"},
 

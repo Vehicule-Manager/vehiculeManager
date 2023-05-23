@@ -17,7 +17,7 @@ class VehiculeController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/vehicule",
+     *      path="/vehicules",
      *      operationId="vehiculeIndex",
      *      tags={"vehicule"},
 

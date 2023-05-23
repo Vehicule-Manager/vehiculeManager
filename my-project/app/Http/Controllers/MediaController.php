@@ -16,7 +16,7 @@ class MediaController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/media",
+     *      path="/medias",
      *      operationId="mediaIndex",
      *      tags={"media"},
 

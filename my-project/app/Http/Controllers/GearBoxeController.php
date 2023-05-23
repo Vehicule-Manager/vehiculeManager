@@ -15,7 +15,7 @@ class GearBoxeController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/gearBoxe",
+     *      path="/gearBoxes",
      *      operationId="gearBoxeIndex",
      *      tags={"gearBoxe"},
 

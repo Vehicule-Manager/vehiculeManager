@@ -20,7 +20,7 @@ class TypeController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/type",
+     *      path="/types",
      *      operationId="typeIndex",
      *      tags={"type"},
 

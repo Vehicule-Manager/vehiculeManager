@@ -15,7 +15,7 @@ class EnergieController extends Controller
 
     /**
      * @OA\Get (
-     *      path="/energie",
+     *      path="/energies",
      *      operationId="energieIndex",
      *      tags={"energie"},
 

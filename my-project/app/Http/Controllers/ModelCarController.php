@@ -15,7 +15,7 @@ class ModelCarController extends Controller
 
     /**
      * @OA\Get (
-     *      path="/model",
+     *      path="/models",
      *      operationId="modelIndex",
      *      tags={"model"},
 

@@ -15,7 +15,7 @@ class ClientController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/client",
+     *      path="/clients",
      *      operationId="clientIndex",
      *      tags={"clients"},
      *      summary="Get List Of client",
@@ -93,8 +93,8 @@ class ClientController extends Controller
      */
     public function clientShow($id)
     {
-        $subject = DB::table('clients')->select('civility', 'firstname', 'lastname', 'birthDate', 'address', 'optionalAddress', 'zipCode', 'city', 'id_users', 'id_creditInfos')->where('id', '=', $id)->get();
-        return response()->json();
+        $client = DB::table('clients')->select('civility', 'firstname', 'lastname', 'birthDate', 'address', 'optionalAddress', 'zipCode', 'city', 'id_users', 'id_creditInfos')->where('id', '=', $id)->get();
+        return response()->json($client);
     }
 
     public function clientUpdate($id, Request $request)

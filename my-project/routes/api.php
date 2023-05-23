@@ -40,7 +40,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route for Appointment
 // List of all appointment
-Route::get('/appointment', [AppointmentController::class, 'appointmentIndex']);
+Route::get('/appointments', [AppointmentController::class, 'appointmentIndex']);
 // Display one appointment
 Route::get('/appointment/{id}', [AppointmentController::class, 'appointmentShow']);
 // Add a new appointment
@@ -54,17 +54,17 @@ Route::delete('/appointment/{id}', [AppointmentController::class, 'appointmentDe
 // List of all credit infos
 Route::get('/credit-infos', [CreditInfoController::class, 'creditInfosIndex']);
 // Display one credit infos
-Route::get('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosShow']);
+Route::get('/credit-info/{id}', [CreditInfoController::class, 'creditInfosShow']);
 // Add a new credit infos
-Route::post('/credit-infos', [CreditInfoController::class, 'creditInfosStore']);
+Route::post('/credit-info', [CreditInfoController::class, 'creditInfosStore']);
 // Edit a credit infos
-Route::put('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosUpdate']);
+Route::put('/credit-info/{id}', [CreditInfoController::class, 'creditInfosUpdate']);
 // Delete a credit infos
-Route::delete('/credit-infos/{id}', [CreditInfoController::class, 'creditInfosDestroy']);
+Route::delete('/credit-info/{id}', [CreditInfoController::class, 'creditInfosDestroy']);
 
 //route for type
 // List of all type
-Route::get('/type', [TypeController::class, 'typeIndex']);
+Route::get('/types', [TypeController::class, 'typeIndex']);
 // Display one type
 Route::get('/type/{id}', [TypeController::class, 'typeShow']);
 // Add a new type
@@ -76,7 +76,7 @@ Route::delete('/type/{id}', [TypeController::class, 'typeDestroy']);
 
 //route for vehicule
 // List of all vehicule
-Route::get('/vehicule', [VehiculeController::class, 'vehiculeIndex']);
+Route::get('/vehicules', [VehiculeController::class, 'vehiculeIndex']);
 // Display one vehicule
 Route::get('/vehicule/{id}', [VehiculeController::class, 'vehiculeShow']);
 // Add a new vehicule
@@ -89,31 +89,31 @@ Route::delete('/vehicule/{id}', [VehiculeController::class, 'vehiculeDestroy']);
 
 // Route for Family Situation
 // List of all family Situation
-Route::get('/situation-familiale', [FamilySituationController::class, 'familySituationIndex']);
+Route::get('/family-situations', [FamilySituationController::class, 'familySituationIndex']);
 // Display one family situation
-Route::get('/situation-familiale/{id}', [FamilySituationController::class, 'familySituationShow']);
+Route::get('/family-situation/{id}', [FamilySituationController::class, 'familySituationShow']);
 // Add a new family situation
-Route::post('/situation-familiale', [FamilySituationController::class, 'familySituationStore']);
+Route::post('/family-situation', [FamilySituationController::class, 'familySituationStore']);
 // Edit a family situation
-Route::put('/situation-familiale/{id}', [FamilySituationController::class, 'familySituationUpdate']);
+Route::put('/family-situation/{id}', [FamilySituationController::class, 'familySituationUpdate']);
 // Delete a family situation
-Route::delete('/situation-familiale/{id}', [FamilySituationController::class, 'familySituationDestroy']);
+Route::delete('/family-situation/{id}', [FamilySituationController::class, 'familySituationDestroy']);
 
 // Route for Situation profesionnal
 // List of all Situation profesionnal
-Route::get('/situation-professionnelle', [ProfessionnalSituationController::class, 'ProfessionnalSituationIndex']);
+Route::get('/professional-situations', [ProfessionnalSituationController::class, 'ProfessionnalSituationIndex']);
 // Display one Situation profesionnal
-Route::get('/situation-professionnelle/{id}', [ProfessionnalSituationController::class, 'ProfessionnalSituationShow']);
+Route::get('/professional-situation/{id}', [ProfessionnalSituationController::class, 'ProfessionnalSituationShow']);
 // Add a new Situation profesionnal
-Route::post('/situation-professionnelle', [ProfessionnalSituationController::class, 'ProfessionnalSituationStore']);
+Route::post('/professional-situation', [ProfessionnalSituationController::class, 'ProfessionnalSituationStore']);
 // Edit a Situation profesionnal
-Route::put('/situation-professionnelle/{id}', [ProfessionnalSituationController::class, 'ProfessionnalSituationUpdate']);
+Route::put('/professional-situation/{id}', [ProfessionnalSituationController::class, 'ProfessionnalSituationUpdate']);
 // Delete a Situation profesionnal
-Route::delete('/situation-professionnelle/{id}', [ProfessionnalSituationController::class, 'ProfessionnalSituationDestroy']);
+Route::delete('/professional-situation/{id}', [ProfessionnalSituationController::class, 'ProfessionnalSituationDestroy']);
 
 // Route for Media
 // List of all Media
-Route::get('/media', [MediaController::class, 'mediaIndex']);
+Route::get('/medias', [MediaController::class, 'mediaIndex']);
 // Display one Media
 Route::get('/media/{id}', [MediaController::class, 'mediaShow']);
 // Add a new Media
@@ -125,7 +125,7 @@ Route::delete('/media/{id}', [MediaController::class, 'mediaDestroy']);
 
 // Route for Employee
 // List of all Employee
-Route::get('/employee', [EmployeeController::class, 'employeeIndex']);
+Route::get('/employees', [EmployeeController::class, 'employeeIndex']);
 // Display one Employee
 Route::get('/employee/{id}', [EmployeeController::class, 'employeeShow']);
 // Add a new Employee
@@ -137,7 +137,7 @@ Route::delete('/employee/{id}', [EmployeeController::class, 'employeeDestroy']);
 
 // Route for User
 // List of all users
-Route::get('/user', [UserController::class, 'userIndex']);
+Route::get('/users', [UserController::class, 'userIndex']);
 // Display one user
 Route::get('/user/{id}', [UserController::class, 'userShow']);
 // Add user
@@ -149,7 +149,7 @@ Route::delete('/user/{id}', [UserController::class, 'userDestroy']);
 
 // Route for Brand
 // List of all brand
-Route::get('/brand', [BrandController::class, 'brandIndex']);
+Route::get('/brands', [BrandController::class, 'brandIndex']);
 // Display one brand
 Route::get('/brand/{id}', [BrandController::class, 'brandShow']);
 // Add brand
@@ -173,7 +173,7 @@ Route::delete('/status/{id}', [StatusController::class, 'statusDestroy']);
 
 // Route for LeavingVehicule
 // List of all leavingVehicule
-Route::get('/leavingVehicule', [LeavingVehiculeController::class, 'leavingVehiculeIndex']);
+Route::get('/leavingVehicules', [LeavingVehiculeController::class, 'leavingVehiculeIndex']);
 // Display one leavingVehicule
 Route::get('/leavingVehicule/{id}', [LeavingVehiculeController::class, 'leavingVehiculeShow']);
 // Add leavingVehicule
@@ -185,7 +185,7 @@ Route::delete('/leavingVehicule/{id}', [LeavingVehiculeController::class, 'leavi
 
 // Route for GearBoxe
 // List of all gearBoxe
-Route::get('/gearBoxe', [GearBoxeController::class, 'gearBoxeIndex']);
+Route::get('/gearBoxes', [GearBoxeController::class, 'gearBoxeIndex']);
 // Display one gearBoxe
 Route::get('/gearBoxe/{id}', [GearBoxeController::class, 'gearBoxeShow']);
 // Add gearBoxe
@@ -197,7 +197,7 @@ Route::delete('/gearBoxe/{id}', [GearBoxeController::class, 'gearBoxeDestroy']);
 
 // Route for Article
 // List of all article
-Route::get('/article', [ArticleController::class, 'articleIndex']);
+Route::get('/articles', [ArticleController::class, 'articleIndex']);
 // Display one article
 Route::get('/article/{id}', [ArticleController::class, 'articleShow']);
 // Add article
@@ -209,7 +209,7 @@ Route::delete('/article/{id}', [ArticleController::class, 'articleDestroy']);
 
 // Route for Subject
 // List of all subjects
-Route::get('/subject', [SubjectController::class, 'subjectIndex']);
+Route::get('/subjects', [SubjectController::class, 'subjectIndex']);
 // Display one subject
 Route::get('/subject/{id}', [SubjectController::class, 'subjectShow']);
 // Add subject
@@ -221,7 +221,7 @@ Route::delete('/subject/{id}', [SubjectController::class, 'subjectDestroy']);
 
 // Route for Client
 // List of all clients
-Route::get('/client', [ClientController::class, 'clientIndex']);
+Route::get('/clients', [ClientController::class, 'clientIndex']);
 // Display one client
 Route::get('/client/{id}', [ClientController::class, 'clientShow']);
 // Add a client
@@ -233,7 +233,7 @@ Route::delete('/client/{id}', [ClientController::class, 'clientDestroy']);
 
 // Route for Role
 // List of all roles
-Route::get('/role', [RoleController::class, 'roleIndex']);
+Route::get('/roles', [RoleController::class, 'roleIndex']);
 // Display one role
 Route::get('/role/{id}', [RoleController::class, 'roleShow']);
 // Add a role
@@ -245,7 +245,7 @@ Route::delete('/role/{id}', [RoleController::class, 'roleDestroy']);
 
 // Route for Energie
 // List of all energies
-Route::get('/energie', [EnergieController::class, 'energieIndex']);
+Route::get('/energies', [EnergieController::class, 'energieIndex']);
 // Display one energie
 Route::get('/energie/{id}', [EnergieController::class, 'energieShow']);
 // Add a energie
@@ -257,7 +257,7 @@ Route::delete('/energie/{id}', [EnergieController::class, 'energieDestroy']);
 
 // Route for Model car
 // List of all modele car
-Route::get('/model', [ModelCarController::class, 'modelIndex']);
+Route::get('/models', [ModelCarController::class, 'modelIndex']);
 // Display one modele car
 Route::get('/model/{id}', [ModelCarController::class, 'modelShow']);
 // Add a modele car
