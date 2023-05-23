@@ -14,12 +14,12 @@
     },
     "servers": [
         {
-            "url": "http://127.0.0.1.com",
+            "url": "http://127.0.0.1:8000/api",
             "description": "Demo API Server"
         }
     ],
     "paths": {
-        "/appointment": {
+        "/appointments": {
             "get": {
                 "tags": [
                     "rendez vous"
@@ -127,7 +127,7 @@
                 }
             }
         },
-        "/article": {
+        "/articles": {
             "get": {
                 "tags": [
                     "article"
@@ -235,7 +235,7 @@
                 }
             }
         },
-        "/brand": {
+        "/brands": {
             "get": {
                 "tags": [
                     "brand"
@@ -343,7 +343,7 @@
                 }
             }
         },
-        "/client": {
+        "/clients": {
             "get": {
                 "tags": [
                     "clients"
@@ -559,7 +559,7 @@
                 }
             }
         },
-        "/employee": {
+        "/employees": {
             "get": {
                 "tags": [
                     "employee"
@@ -667,7 +667,7 @@
                 }
             }
         },
-        "/energie": {
+        "/energies": {
             "get": {
                 "tags": [
                     "energie"
@@ -775,7 +775,7 @@
                 }
             }
         },
-        "/situation-familiale": {
+        "/family-situation": {
             "get": {
                 "tags": [
                     "situation familiale"
@@ -805,7 +805,7 @@
                 }
             }
         },
-        "/situation-familiale/{id}": {
+        "/family-situation/{id}": {
             "get": {
                 "tags": [
                     "situation familiale"
@@ -883,7 +883,7 @@
                 }
             }
         },
-        "/gearBoxe": {
+        "/gearBoxes": {
             "get": {
                 "tags": [
                     "gearBoxe"
@@ -991,7 +991,7 @@
                 }
             }
         },
-        "/leavingVehicule": {
+        "/leavingVehicules": {
             "get": {
                 "tags": [
                     "leavingVehicule"
@@ -1099,7 +1099,7 @@
                 }
             }
         },
-        "/media": {
+        "/medias": {
             "get": {
                 "tags": [
                     "media"
@@ -1207,7 +1207,7 @@
                 }
             }
         },
-        "/model": {
+        "/models": {
             "get": {
                 "tags": [
                     "model"
@@ -1315,7 +1315,7 @@
                 }
             }
         },
-        "/situation-professionnelle": {
+        "/professional-situation": {
             "get": {
                 "tags": [
                     "situation professionnelle"
@@ -1345,7 +1345,7 @@
                 }
             }
         },
-        "/situation-professionnelle/{id}": {
+        "/professional-situation/{id}": {
             "get": {
                 "tags": [
                     "situation professionnelle"
@@ -1423,7 +1423,7 @@
                 }
             }
         },
-        "/role": {
+        "/roles": {
             "get": {
                 "tags": [
                     "role"
@@ -1639,7 +1639,115 @@
                 }
             }
         },
-        "/type": {
+        "/subjects": {
+            "get": {
+                "tags": [
+                    "subjects"
+                ],
+                "summary": "Get List Of subjects",
+                "description": "Returns all subjects",
+                "operationId": "subjectIndex",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/subject/{id}": {
+            "get": {
+                "tags": [
+                    "subjects"
+                ],
+                "summary": "Get Of subjects",
+                "description": "Returns the subjects",
+                "operationId": "subjectShow",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "subjects"
+                ],
+                "summary": "Get Of Status",
+                "description": "Returns the status",
+                "operationId": "subjectDestroy",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/types": {
             "get": {
                 "tags": [
                     "type"
@@ -1747,7 +1855,7 @@
                 }
             }
         },
-        "/user": {
+        "/users": {
             "get": {
                 "tags": [
                     "user"
@@ -1855,7 +1963,7 @@
                 }
             }
         },
-        "/vehicule": {
+        "/vehicules": {
             "get": {
                 "tags": [
                     "vehicule"

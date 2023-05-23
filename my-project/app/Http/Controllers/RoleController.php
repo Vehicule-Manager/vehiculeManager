@@ -15,7 +15,7 @@ class RoleController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/role",
+     *      path="/roles",
      *      operationId="roleIndex",
      *      tags={"role"},
 

@@ -15,7 +15,7 @@ class EmployeeController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/employee",
+     *      path="/employees",
      *      operationId="employeeIndex",
      *      tags={"employee"},
 

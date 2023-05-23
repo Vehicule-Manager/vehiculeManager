@@ -16,7 +16,7 @@ class ArticleController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/article",
+     *      path="/articles",
      *      operationId="articleIndex",
      *      tags={"article"},
 

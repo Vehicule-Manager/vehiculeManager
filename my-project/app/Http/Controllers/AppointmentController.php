@@ -15,7 +15,7 @@ class AppointmentController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/appointment",
+     *      path="/appointments",
      *      operationId="appointmentIndex",
      *      tags={"rendez vous"},
 

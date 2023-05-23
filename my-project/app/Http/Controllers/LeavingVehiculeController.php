@@ -15,7 +15,7 @@ class LeavingVehiculeController extends Controller
 
     /**
      * @OA\Get (
-     *      path="/leavingVehicule",
+     *      path="/leavingVehicules",
      *      operationId="leavingVehiculeIndex",
      *      tags={"leavingVehicule"},
 
