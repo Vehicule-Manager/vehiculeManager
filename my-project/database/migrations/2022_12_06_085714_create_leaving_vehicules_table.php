@@ -17,13 +17,19 @@ return new class extends Migration
             $table->increments('id');
             $table->date('leavingDate');
             $table->date('renderDate');
-            $table->string('contract',50);
+            $table->integer('id_statuses')->unsigned();
             $table->integer('id_clients')->unsigned();
             $table->integer('id_vehicules')->unsigned();
             $table->timestamps();
         });
 
         Schema::table('leaving_vehicules', function ($table) {
+            $table
+                ->foreign('id_statuses')
+                ->references('id')
+                ->on('statuses')
+                ->onDelete('cascade');
+
             $table
                 ->foreign('id_clients')
                 ->references('id')

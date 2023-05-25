@@ -97,7 +97,7 @@ class StatusController extends Controller
 
     public function statusShow($id)
     {
-        $status = DB::table('Statuses')->select('name')->where('id', '=', $id)->get();
+        $status = DB::table('statuses')->select('id', 'name')->where('id', '=', $id)->get();
         return response()->json($status);
     }
 

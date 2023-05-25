@@ -97,7 +97,7 @@ class LeavingVehiculeController extends Controller
 
     public function leavingVehiculeShow($id)
     {
-        $leavingVehicule = DB::table('leaving_vehicules')->select('leavingDate','renderDate','contract','id_clients','id_vehicules')->where('id', '=', $id)->get();
+        $leavingVehicule = DB::table('leaving_vehicules')->select('leavingDate','renderDate','id_statuses','id_clients','id_vehicules')->where('id', '=', $id)->get();
         return response()->json($leavingVehicule);
     }
 
