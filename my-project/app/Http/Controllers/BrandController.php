@@ -97,7 +97,7 @@ class BrandController extends Controller
 
     public function brandShow($id)
     {
-        $brand = DB::table('brands')->select('name')->where('id', '=', $id)->get();
+        $brand = DB::table('brands')->select('id', 'name')->where('id', '=', $id)->get();
         return response()->json($brand);
     }
 

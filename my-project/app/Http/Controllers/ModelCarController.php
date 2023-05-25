@@ -97,7 +97,7 @@ class ModelCarController extends Controller
 
     public function modelShow($id)
     {
-        $model = DB::table('model_car')->select('name')->where('id', '=', $id)->get();
+        $model = DB::table('model_car')->select('id', 'name', 'id_brands')->where('id', '=', $id)->get();
         return response()->json($model);
     }
 

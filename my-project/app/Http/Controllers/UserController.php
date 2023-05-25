@@ -99,7 +99,7 @@ class UserController extends Controller
     // Récupérer les informations d'un utilisateur
     public function userShow($id)
     {
-        $user = DB::table('users')->select('login', 'mail');
+        $user = DB::table('users')->select('login', 'mail')->where('id', '=', $id)->get();
         return response()->json($user);
     }
 
