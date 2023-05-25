@@ -15,7 +15,7 @@ class FamilySituationController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/family-situation",
+     *      path="/family-situations",
      *      operationId="familySituationIndex",
      *      tags={"situation familiale"},
 
@@ -55,7 +55,7 @@ class FamilySituationController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/family-situation/{id}",
+     *      path="/family-situations/{id}",
      *      operationId="familySituationShow",
      *      tags={"situation familiale"},
      *      summary="Get a one family Situation",
@@ -107,7 +107,7 @@ class FamilySituationController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/family-situation/{id}",
+     *      path="/family-situations/{id}",
      *      operationId="familySituationDestroy",
      *      tags={"situation familiale"},
      *      summary="Delete a one family Situation",

@@ -60,7 +60,7 @@ class TypeController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/type/{id}",
+     *      path="/types/{id}",
      *      operationId="typeShow",
      *      tags={"type"},
 
@@ -112,7 +112,7 @@ class TypeController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/type/{id}",
+     *      path="/types/{id}",
      *      operationId="typeDestroy",
      *      tags={"type"},
 

@@ -60,7 +60,7 @@ class VehiculeController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/vehicule/{id}",
+     *      path="/vehicules/{id}",
      *      operationId="vehiculeShow",
      *      tags={"vehicule"},
 
@@ -114,7 +114,7 @@ class VehiculeController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/vehicule/{id}",
+     *      path="/vehicules/{id}",
      *      operationId="vehiculeDestroy",
      *      tags={"vehicule"},
 

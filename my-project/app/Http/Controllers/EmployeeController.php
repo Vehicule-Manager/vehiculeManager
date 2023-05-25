@@ -55,7 +55,7 @@ class EmployeeController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/employee/{id}",
+     *      path="/employees/{id}",
      *      operationId="employeeShow",
      *      tags={"employee"},
      *      summary="Get a one employee",
@@ -107,7 +107,7 @@ class EmployeeController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/employee/{id}",
+     *      path="/employees/{id}",
      *      operationId="employeeDestroy",
      *      tags={"employee"},
      *      summary="Delete a one employee",

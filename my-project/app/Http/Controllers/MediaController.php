@@ -55,7 +55,7 @@ class MediaController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/media/{id}",
+     *      path="/medias/{id}",
      *      operationId="mediaShow",
      *      tags={"media"},
      *      summary="Get a one media",
@@ -107,7 +107,7 @@ class MediaController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/media/{id}",
+     *      path="/medias/{id}",
      *      operationId="mediaDestroy",
      *      tags={"media"},
      *      summary="Delete a one media",

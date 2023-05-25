@@ -55,7 +55,7 @@ class SubjectController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/subject/{id}",
+     *      path="/subjects/{id}",
      *      operationId="subjectShow",
      *      tags={"subjects"},
 
@@ -107,7 +107,7 @@ class SubjectController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/subject/{id}",
+     *      path="/subjects/{id}",
      *      operationId="subjectDestroy",
      *      tags={"subjects"},
 
