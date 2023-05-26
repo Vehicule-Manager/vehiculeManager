@@ -57,7 +57,7 @@ class UserController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/user/{id}",
+     *      path="/users/{id}",
      *      operationId="userShow",
      *      tags={"user"},
      *      summary="Get a one user",
@@ -109,7 +109,7 @@ class UserController extends Controller
     }
     /**
      * @OA\Delete(
-     *      path="/user/{id}",
+     *      path="/users/{id}",
      *      operationId="userDestroy",
      *      tags={"user"},
      *      summary="Delete a one user",

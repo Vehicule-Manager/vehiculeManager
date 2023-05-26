@@ -55,7 +55,7 @@ class EnergieController extends Controller
 
     /**
      * @OA\Get (
-     *      path="/energie/{id}",
+     *      path="/energies/{id}",
      *      operationId="energieShow",
      *      tags={"energie"},
 
@@ -108,7 +108,7 @@ class EnergieController extends Controller
 
     /**
      * @OA\Delete (
-     *      path="/energie/{id}",
+     *      path="/energies/{id}",
      *      operationId="energieDestroy",
      *      tags={"energie"},
 

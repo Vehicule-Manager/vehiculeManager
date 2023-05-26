@@ -55,7 +55,7 @@ class ModelCarController extends Controller
 
     /**
      * @OA\Get (
-     *      path="/model/{id}",
+     *      path="/models/{id}",
      *      operationId="modelShow",
      *      tags={"model"},
 
@@ -108,7 +108,7 @@ class ModelCarController extends Controller
 
     /**
      * @OA\Delete (
-     *      path="/model/{id}",
+     *      path="/models/{id}",
      *      operationId="modelDestroy",
      *      tags={"model"},
 

@@ -15,7 +15,7 @@ class ProfessionnalSituationController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/professional-situation",
+     *      path="/professional-situations",
      *      operationId="ProfessionnalSituationIndex",
      *      tags={"situation professionnelle"},
 
@@ -55,7 +55,7 @@ class ProfessionnalSituationController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/professional-situation/{id}",
+     *      path="/professional-situations/{id}",
      *      operationId="ProfessionnalSituationShow",
      *      tags={"situation professionnelle"},
      *      summary="Get a one Professionnal Situation",
@@ -107,7 +107,7 @@ class ProfessionnalSituationController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/professional-situation/{id}",
+     *      path="/professional-situations/{id}",
      *      operationId="ProfessionnalSituationDestroy",
      *      tags={"situation professionnelle"},
      *      summary="Delete a one Professionnal Situation",

@@ -55,7 +55,7 @@ class GearBoxeController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/gearBoxe/{id}",
+     *      path="/gearBoxes/{id}",
      *      operationId="gearBoxeShow",
      *      tags={"gearBoxe"},
      *      summary="Get a one gearBoxe",
@@ -107,7 +107,7 @@ class GearBoxeController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/gearBoxe/{id}",
+     *      path="/gearBoxes/{id}",
      *      operationId="gearBoxeDestroy",
      *      tags={"gearBoxe"},
      *      summary="Delete a one gearBoxe",

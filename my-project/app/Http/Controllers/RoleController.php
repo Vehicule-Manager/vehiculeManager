@@ -55,7 +55,7 @@ class RoleController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/role/{id}",
+     *      path="/roles/{id}",
      *      operationId="roleShow",
      *      tags={"role"},
      *      summary="Get a one role",
@@ -106,7 +106,7 @@ class RoleController extends Controller
     }
     /**
      * @OA\Delete(
-     *      path="/role/{id}",
+     *      path="/roles/{id}",
      *      operationId="roleDestroy",
      *      tags={"role"},
      *      summary="Delete a one role",

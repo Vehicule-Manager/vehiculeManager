@@ -55,7 +55,7 @@ class LeavingVehiculeController extends Controller
 
     /**
      * @OA\Get (
-     *      path="/leavingVehicule/{id}",
+     *      path="/leavingVehicules/{id}",
      *      operationId="leavingVehiculeShow",
      *      tags={"leavingVehicule"},
 
@@ -108,7 +108,7 @@ class LeavingVehiculeController extends Controller
 
     /**
      * @OA\Delete (
-     *      path="/leavingVehicule/{id}",
+     *      path="/leavingVehicules/{id}",
      *      operationId="leavingVehiculeDestroy",
      *      tags={"leavingVehicule"},
 
@@ -156,7 +156,7 @@ class LeavingVehiculeController extends Controller
 
     /**
      * @OA\Get (
-     *      path="/leavingVehicule/client/{$clientId}",
+     *      path="/leavingVehicules/client/{$clientId}",
      *      operationId="leasingVehiclesByClientId",
      *      tags={"leavingVehicule"},
 

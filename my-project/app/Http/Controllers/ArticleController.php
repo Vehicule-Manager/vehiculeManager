@@ -57,7 +57,7 @@ class ArticleController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/article/{id}",
+     *      path="/articles/{id}",
      *      operationId="articleShow",
      *      tags={"article"},
 
@@ -110,7 +110,7 @@ class ArticleController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/article/{id}",
+     *      path="/articles/{id}",
      *      operationId="articleDestroy",
      *      tags={"article"},
 

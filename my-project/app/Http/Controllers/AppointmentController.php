@@ -55,7 +55,7 @@ class AppointmentController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/appointment/{id}",
+     *      path="/appointments/{id}",
      *      operationId="appointmentShow",
      *      tags={"rendez vous"},
      *      summary="Get a one appointment",
@@ -107,7 +107,7 @@ class AppointmentController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/appointment/{id}",
+     *      path="/appointments/{id}",
      *      operationId="appointmentDestroy",
      *      tags={"rendez vous"},
      *      summary="Delete a one appointment",

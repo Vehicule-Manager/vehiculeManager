@@ -55,7 +55,7 @@ class BrandController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/brand/{id}",
+     *      path="/brands/{id}",
      *      operationId="brandShow",
      *      tags={"brand"},
 
@@ -108,7 +108,7 @@ class BrandController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/brand/{id}",
+     *      path="/brands/{id}",
      *      operationId="brandDestroy",
      *      tags={"brand"},
 

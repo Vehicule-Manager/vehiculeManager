@@ -53,7 +53,7 @@ class ClientController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/client/{id}",
+     *      path="/clients/{id}",
      *      operationId="clientShow",
      *      tags={"clients"},
      *      summary="Get a one client",
@@ -105,7 +105,7 @@ class ClientController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/client/{id}",
+     *      path="/clients/{id}",
      *      operationId="clientDestroy",
      *      tags={"clients"},
      *      summary="Delete a one client",

@@ -60,7 +60,7 @@ class VehiculeController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/vehicule/{id}",
+     *      path="/vehicules/{id}",
      *      operationId="vehiculeShow",
      *      tags={"vehicule"},
 
@@ -101,7 +101,7 @@ class VehiculeController extends Controller
      */
     public function vehiculeShow($id)
     {
-        $vehicule = DB::table('vehicules')->select('new','firstDateCicrulate','description','horsepower',
+        $vehicule = DB::table('vehicules')->select('id', 'new','firstDateCicrulate','description','horsepower',
             'price','enterDate','leavingDate', 'immatriculation','id_statuses','id_clients','id_gear_boxes','id_brands',
             'id_energies','id_types','id_model_car')->where('id', '=', $id)->get();
         return response()->json($vehicule);
@@ -114,7 +114,7 @@ class VehiculeController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/vehicule/{id}",
+     *      path="/vehicules/{id}",
      *      operationId="vehiculeDestroy",
      *      tags={"vehicule"},
 
