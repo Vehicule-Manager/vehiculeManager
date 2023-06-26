@@ -40,6 +40,11 @@ Migration
  - Lien Notion : https://concrete-grouse-96d.notion.site/Promo-CDA-5215121ca7c74086b09c62615c765575
  - Lien Figma : https://www.figma.com/file/xOUedZPrkebs9HFc5jHrAx/CDA-Project-Location
 
+ ### Utilisateur Test
+
+ Mail : admin@test.fr
+ Password : Vehicle80!
+
 
   
 
