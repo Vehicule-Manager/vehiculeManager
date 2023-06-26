@@ -84,6 +84,14 @@ class DatabaseSeeder extends Seeder
             $create->save();
         }
 
+        $admin = new User();
+        $admin->login = "AdminName";
+        $admin->mail = "admin@test.fr";
+        $admin->password = bcrypt("Vehicle80!");
+        $admin->id_roles = "1";
+        $admin->mailVerified = "0";
+        $admin->save();
+
         User::factory(15)->create();
         Client::factory(5)->create();
 
