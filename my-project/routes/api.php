@@ -5,6 +5,8 @@ use App\Http\Controllers\EnergieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TodoController;
 use App\Http\Controllers\CreditInfoController;
 use App\Http\Controllers\FamilySituationController;
 use App\Http\Controllers\MediaController;
@@ -37,6 +39,18 @@ use App\Http\Controllers\ModelCarController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/refresh', [AuthController::class, 'refresh']);
+
+
+    Route::get('/todos', [TodoController::class, 'index']);
+    Route::post('/todo', [TodoController::class, 'store']);
+    Route::get('/todo/{id}', [TodoController::class, 'show']);
+    Route::put('/todo/{id}', [TodoController::class, 'update']);
+    Route::delete('/todo/{id}', [TodoController::class, 'destroy']);
 
 // Route for Appointment
 // List of all appointment
