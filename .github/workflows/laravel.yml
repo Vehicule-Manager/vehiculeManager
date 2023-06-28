@@ -2,9 +2,11 @@ name: Laravel
 
 on:
   push:
-    branches: [ "main" ]
+    # branches: [ "main" ]
+    branches: [ "feature-github-actions" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "feature-github-actions" ]
+    # branches: [ "main" ]
 
 defaults:
   run:
