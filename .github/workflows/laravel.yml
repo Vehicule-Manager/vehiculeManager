@@ -22,7 +22,7 @@ jobs:
         php-version: '8.2'
     - uses: actions/checkout@v3
     - name: Copy .env
-      run: pwd && php -r "file_exists('.env') || copy('.env.example', '.env');"
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate key
@@ -38,3 +38,10 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+  php-cs-fixer:
+    name: PHP-CS-Fixer
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: PHP-CS-Fixer
+      uses: docker://oskarstark/php-cs-fixer-ga
