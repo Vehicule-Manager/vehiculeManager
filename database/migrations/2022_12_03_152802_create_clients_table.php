@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('lastname', 50);
             $table->date('birthDate');
             $table->string('address', 150);
-            $table->string('optionalAddress', 150);
+            $table->string('optionalAddress', 150)->nullable();
             $table->string('zipCode', 7);
             $table->string('city', 100);
             $table->integer('id_users')->unsigned();

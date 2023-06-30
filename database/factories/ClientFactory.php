@@ -18,6 +18,9 @@ class ClientFactory extends Factory
      */
     public function definition()
     {
+        $users = User::where('id', '!=', 1)->get();
+        $creditInfos = CreditInfo::all();
+
         return [
             'civility' => $this->faker->lexify('???'),
             'firstname' => $this->faker->firstName(),
@@ -27,9 +30,8 @@ class ClientFactory extends Factory
             'optionalAddress' => $this->faker->word(),
             'zipCode' => $this->faker->randomNumber(5, true),
             'city' => $this->faker->city(),
-            'id_users' => User::all()->random()->id,
-            'id_creditInfos' => CreditInfo::all()->random()->id,
-            //
+            'id_users' => $users->isEmpty() ? 1 : $users->random()->id,
+            'id_creditInfos' => $creditInfos->isEmpty() ? 1 : $creditInfos->random()->id,
         ];
     }
 }
