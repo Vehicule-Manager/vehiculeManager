@@ -17,7 +17,7 @@ class EnergieController extends Controller
      * @OA\Get (
      *      path="/energies",
      *      operationId="energieIndex",
-     *      tags={"energie"},
+     *      tags={"Energy"},
 
      *      summary="Get Of Energie",
      *      description="Returns the energie",
@@ -57,7 +57,7 @@ class EnergieController extends Controller
      * @OA\Get (
      *      path="/energies/{id}",
      *      operationId="energieShow",
-     *      tags={"energie"},
+     *      tags={"Energy"},
 
      *      summary="Get Of Energie",
      *      description="Returns the energie",
@@ -110,7 +110,7 @@ class EnergieController extends Controller
      * @OA\Delete (
      *      path="/energies/{id}",
      *      operationId="energieDestroy",
-     *      tags={"energie"},
+     *      tags={"Energy"},
 
      *      summary="Get Of Energie",
      *      description="Returns the energie",

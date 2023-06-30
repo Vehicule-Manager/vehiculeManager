@@ -18,7 +18,7 @@ class MediaController extends Controller
      * @OA\Get(
      *      path="/medias",
      *      operationId="mediaIndex",
-     *      tags={"media"},
+     *      tags={"Media"},
 
      *      summary="Get List Of media",
      *      description="Return the list media",
@@ -57,7 +57,7 @@ class MediaController extends Controller
      * @OA\Get(
      *      path="/medias/{id}",
      *      operationId="mediaShow",
-     *      tags={"media"},
+     *      tags={"Media"},
      *      summary="Get a one media",
      *      description="Returns a one media",
      *@OA\Parameter(
@@ -109,7 +109,7 @@ class MediaController extends Controller
      * @OA\Delete(
      *      path="/medias/{id}",
      *      operationId="mediaDestroy",
-     *      tags={"media"},
+     *      tags={"Media"},
      *      summary="Delete a one media",
      *      description="Returns a one media",
      *@OA\Parameter(

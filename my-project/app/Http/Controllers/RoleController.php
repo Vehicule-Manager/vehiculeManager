@@ -17,7 +17,7 @@ class RoleController extends Controller
      * @OA\Get(
      *      path="/roles",
      *      operationId="roleIndex",
-     *      tags={"role"},
+     *      tags={"Role"},
 
      *      summary="Get List Of role",
      *      description="Return the list role",
@@ -57,7 +57,7 @@ class RoleController extends Controller
      * @OA\Get(
      *      path="/roles/{id}",
      *      operationId="roleShow",
-     *      tags={"role"},
+     *      tags={"Role"},
      *      summary="Get a one role",
      *      description="Returns a one role",
      *@OA\Parameter(
@@ -108,7 +108,7 @@ class RoleController extends Controller
      * @OA\Delete(
      *      path="/roles/{id}",
      *      operationId="roleDestroy",
-     *      tags={"role"},
+     *      tags={"Role"},
      *      summary="Delete a one role",
      *      description="Returns a one role",
      *@OA\Parameter(

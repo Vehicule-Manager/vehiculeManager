@@ -17,7 +17,7 @@ class ModelCarController extends Controller
      * @OA\Get (
      *      path="/models",
      *      operationId="modelIndex",
-     *      tags={"model"},
+     *      tags={"Model"},
 
      *      summary="Get Of model",
      *      description="Returns the model",
@@ -57,7 +57,7 @@ class ModelCarController extends Controller
      * @OA\Get (
      *      path="/models/{id}",
      *      operationId="modelShow",
-     *      tags={"model"},
+     *      tags={"Model"},
 
      *      summary="Get Of model",
      *      description="Returns the model",
@@ -110,7 +110,7 @@ class ModelCarController extends Controller
      * @OA\Delete (
      *      path="/models/{id}",
      *      operationId="modelDestroy",
-     *      tags={"model"},
+     *      tags={"Model"},
 
      *      summary="Get Of model",
      *      description="Returns the model",

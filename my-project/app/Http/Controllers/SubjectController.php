@@ -17,7 +17,7 @@ class SubjectController extends Controller
      * @OA\Get(
      *      path="/subjects",
      *      operationId="subjectIndex",
-     *      tags={"subjects"},
+     *      tags={"Subjects"},
 
      *      summary="Get List Of subjects",
      *      description="Returns all subjects",
@@ -57,7 +57,7 @@ class SubjectController extends Controller
      * @OA\Get(
      *      path="/subjects/{id}",
      *      operationId="subjectShow",
-     *      tags={"subjects"},
+     *      tags={"Subjects"},
 
      *      summary="Get Of subjects",
      *      description="Returns the subjects",
@@ -109,7 +109,7 @@ class SubjectController extends Controller
      * @OA\Delete(
      *      path="/subjects/{id}",
      *      operationId="subjectDestroy",
-     *      tags={"subjects"},
+     *      tags={"Subjects"},
 
      *      summary="Get Of Status",
      *      description="Returns the status",

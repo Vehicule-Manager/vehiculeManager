@@ -17,7 +17,7 @@ class ClientController extends Controller
      * @OA\Get(
      *      path="/clients",
      *      operationId="clientIndex",
-     *      tags={"clients"},
+     *      tags={"Customer"},
      *      summary="Get List Of client",
      *      description="Return the list client",
      *      @OA\Response(
@@ -55,7 +55,7 @@ class ClientController extends Controller
      * @OA\Get(
      *      path="/clients/{id}",
      *      operationId="clientShow",
-     *      tags={"clients"},
+     *      tags={"Customer"},
      *      summary="Get a one client",
      *      description="Returns a one client",
      *@OA\Parameter(
@@ -107,7 +107,7 @@ class ClientController extends Controller
      * @OA\Delete(
      *      path="/clients/{id}",
      *      operationId="clientDestroy",
-     *      tags={"clients"},
+     *      tags={"Customer"},
      *      summary="Delete a one client",
      *      description="Returns a one client",
      *@OA\Parameter(

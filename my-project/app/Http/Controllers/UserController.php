@@ -18,7 +18,7 @@ class UserController extends Controller
      * @OA\Get(
      *      path="/users",
      *      operationId="userIndex",
-     *      tags={"user"},
+     *      tags={"User"},
 
      *      summary="Get List Of user",
      *      description="Return the list user",
@@ -59,7 +59,7 @@ class UserController extends Controller
      * @OA\Get(
      *      path="/users/{id}",
      *      operationId="userShow",
-     *      tags={"user"},
+     *      tags={"User"},
      *      summary="Get a one user",
      *      description="Returns a one user",
      *@OA\Parameter(
@@ -111,7 +111,7 @@ class UserController extends Controller
      * @OA\Delete(
      *      path="/users/{id}",
      *      operationId="userDestroy",
-     *      tags={"user"},
+     *      tags={"User"},
      *      summary="Delete a one user",
      *      description="Returns a one user",
      *@OA\Parameter(

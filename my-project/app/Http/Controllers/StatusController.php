@@ -17,7 +17,7 @@ class StatusController extends Controller
      * @OA\Get(
      *      path="/status",
      *      operationId="statusIndex",
-     *      tags={"status"},
+     *      tags={"Status"},
 
      *      summary="Get List Of status",
      *      description="Returns all status",
@@ -57,7 +57,7 @@ class StatusController extends Controller
      * @OA\Get(
      *      path="/status/{id}",
      *      operationId="statusShow",
-     *      tags={"status"},
+     *      tags={"Status"},
 
      *      summary="Get Of Status",
      *      description="Returns the status",
@@ -110,7 +110,7 @@ class StatusController extends Controller
      * @OA\Delete(
      *      path="/status/{id}",
      *      operationId="statusDestroy",
-     *      tags={"status"},
+     *      tags={"Status"},
 
      *      summary="Get Of Status",
      *      description="Returns the status",

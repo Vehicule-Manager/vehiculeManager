@@ -18,7 +18,7 @@ class ArticleController extends Controller
      * @OA\Get(
      *      path="/articles",
      *      operationId="articleIndex",
-     *      tags={"article"},
+     *      tags={"Article"},
 
      *      summary="Get Of Article",
      *      description="Returns the article",
@@ -59,7 +59,7 @@ class ArticleController extends Controller
      * @OA\Get(
      *      path="/articles/{id}",
      *      operationId="articleShow",
-     *      tags={"article"},
+     *      tags={"Article"},
 
      *      summary="Get Of Article",
      *      description="Returns the article",
@@ -112,7 +112,7 @@ class ArticleController extends Controller
      * @OA\Delete(
      *      path="/articles/{id}",
      *      operationId="articleDestroy",
-     *      tags={"article"},
+     *      tags={"Article"},
 
      *      summary="Get Of Article",
      *      description="Returns the article",
