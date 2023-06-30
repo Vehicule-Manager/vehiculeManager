@@ -92,8 +92,20 @@ class DatabaseSeeder extends Seeder
         $admin->mailVerified = "0";
         $admin->save();
 
+        $clientTest = new Client();
+        $clientTest->civility = "m";
+        $clientTest->firstName = "Aled";
+        $clientTest->lastName = "Oscourt";
+        $clientTest->birthDate = "2002-08-17";
+        $clientTest->address = "62151 Feil Point Dibbertberg, VT 35651";
+        $clientTest->optionalAddress = null;
+        $clientTest->zipCode = "60400";
+        $clientTest->city = "Compiegne";
+        $clientTest->id_users = "1";
+        $clientTest->id_creditInfos = "1";
+        $clientTest->save();
+
         User::factory(15)->create();
-        Client::factory(5)->create();
 
         // Seeder Modele de voiture
         $modelCars = [

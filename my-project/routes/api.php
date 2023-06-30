@@ -35,22 +35,20 @@ use App\Http\Controllers\ModelCarController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/user-profile', [AuthController::class, 'userProfile']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-    Route::post('/login', [AuthController::class, 'login']);
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
+});
 
-
-    Route::get('/todos', [TodoController::class, 'index']);
-    Route::post('/todo', [TodoController::class, 'store']);
-    Route::get('/todo/{id}', [TodoController::class, 'show']);
-    Route::put('/todo/{id}', [TodoController::class, 'update']);
-    Route::delete('/todo/{id}', [TodoController::class, 'destroy']);
+Route::get('/todos', [TodoController::class, 'index']);
+Route::post('/todo', [TodoController::class, 'store']);
+Route::get('/todo/{id}', [TodoController::class, 'show']);
+Route::put('/todo/{id}', [TodoController::class, 'update']);
+Route::delete('/todo/{id}', [TodoController::class, 'destroy']);
 
 // Route for Appointment
 // List of all appointment
@@ -246,6 +244,8 @@ Route::post('/clients', [ClientController::class, 'clientStore']);
 Route::put('/clients/{id}', [ClientController::class, 'clientUpdate']);
 // Delete a client
 Route::delete('/clients/{id}', [ClientController::class, 'clientDestroy']);
+// Display one client
+Route::get('/user/client/{id}', [ClientController::class, 'clientByUser']);
 
 // Route for Role
 // List of all roles

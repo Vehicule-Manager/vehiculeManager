@@ -16,9 +16,10 @@
 Migration
 
 - Créer un model + migration : docker-compose run myapp php artisan make:model < nom du model > -m
-- Faire un migrate : docker-compose run laravel php artisan migrate
 
-- Commande pour generate swagger : sudo docker-compose run laravel php artisan l5-swagger:generate
+- Faire un migrate : docker compose run laravel php artisan migrate
+
+- Commande pour generate swagger : docker compose run laravel php artisan l5-swagger:generate
 
 - Commande pour générer les seeders : docker compose run laravel php artisan db:seed
   
