@@ -158,4 +158,44 @@ class VehiculeController extends Controller
         $vehicule = DB::table('vehicules')->where('id','=',$id)->delete();
         return response()->json($vehicule);
     }
+
+    /**
+     * @OA\Get(
+     *      path="/vehicules",
+     *      operationId="vehiculeTable",
+     *      tags={"vehicule"},
+
+     *      summary="Get List Of Vehicule",
+     *      description="Returns all vehicule",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
+
+     public function vehiculeTable()
+     {
+        $vehicules = Vehicule::all();
+        return response()->json($vehicules);
+     }
 }

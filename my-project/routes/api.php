@@ -99,7 +99,8 @@ Route::post('/vehicules', [VehiculeController::class, 'vehiculeStore']);
 Route::put('/vehicules/{id}', [VehiculeController::class, 'vehiculeUpdate']);
 // Delete a vehicule
 Route::delete('/vehicules/{id}', [VehiculeController::class, 'vehiculeDestroy']);
-
+// Liste of Vehicule for desktop
+Route::get('/vehiculesTable', [VehiculeController::class, 'vehiculeTable']);
 
 // Route for Family Situation
 // List of all family Situation
