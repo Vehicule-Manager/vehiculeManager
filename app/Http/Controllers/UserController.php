@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Role;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-
     public function userStore(Request $request)
     {
         return response()->json();
@@ -22,13 +20,16 @@ class UserController extends Controller
 
      *      summary="Get List Of user",
      *      description="Return the list user",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -52,6 +53,7 @@ class UserController extends Controller
     public function userIndex()
     {
         $user = user::all();
+
         return response()->json($user);
     }
 
@@ -62,21 +64,26 @@ class UserController extends Controller
      *      tags={"user"},
      *      summary="Get a one user",
      *      description="Returns a one user",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -100,6 +107,7 @@ class UserController extends Controller
     public function userShow($id)
     {
         $user = DB::table('users')->select('login', 'mail')->where('id', '=', $id)->get();
+
         return response()->json($user);
     }
 
@@ -107,6 +115,7 @@ class UserController extends Controller
     {
         return response()->json();
     }
+
     /**
      * @OA\Delete(
      *      path="/users/{id}",
@@ -114,21 +123,26 @@ class UserController extends Controller
      *      tags={"user"},
      *      summary="Delete a one user",
      *      description="Returns a one user",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -147,10 +161,10 @@ class UserController extends Controller
      *   ),
      *  )
      */
-
     public function userDestroy($id)
     {
-        $user = DB::table('users')->where('id', '=',$id)->delete();
+        $user = DB::table('users')->where('id', '=', $id)->delete();
+
         return response()->json($user);
     }
 }

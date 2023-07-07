@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ProfessionnalSituationFactory extends Factory
 {
-
     protected $model = ProfessionnalSituation::class;
+
     /**
      * Define the model's default state.
      *
@@ -20,7 +20,7 @@ class ProfessionnalSituationFactory extends Factory
     public function definition()
     {
         return [
-            'name'=> $this->faker->word(7, true),
+            'name' => $this->faker->word(7, true),
         ];
     }
 }

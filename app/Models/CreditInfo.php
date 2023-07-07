@@ -9,10 +9,10 @@ class CreditInfo extends Model
 {
     use HasFactory;
 
-    protected  $table = 'credit_infos';
+    protected $table = 'credit_infos';
 
-    protected  $fillable = [
+    protected $fillable = [
         'placeOfBirth', 'nationality', 'budgets', 'contract',
-        'contractDate', 'banquet', 'professionnalStatus', 'familySituation'
+        'contractDate', 'banquet', 'professionnalStatus', 'familySituation',
     ];
 }

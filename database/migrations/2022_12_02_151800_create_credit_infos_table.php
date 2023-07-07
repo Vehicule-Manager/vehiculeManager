@@ -20,9 +20,9 @@ return new class extends Migration
             $table->float('budgets', 10, 2);
             $table->string('contract', 60);
             $table->date('contractDate');
-            $table->string('banquet',25);
+            $table->string('banquet', 25);
             $table->string('professionnalStatus', 50);
-            $table->string('familySituation',30);
+            $table->string('familySituation', 30);
             $table->timestamps();
         });
     }

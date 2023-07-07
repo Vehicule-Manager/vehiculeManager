@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\Status;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Client;
+use App\Models\Status;
 use App\Models\Vehicule;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LeavingVehiculeFactory extends Factory
 {

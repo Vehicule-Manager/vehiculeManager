@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
@@ -21,13 +21,16 @@ class EmployeeController extends Controller
 
      *      summary="Get List Of employee",
      *      description="Return the list employee",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -46,10 +49,10 @@ class EmployeeController extends Controller
      *   ),
      *  )
      */
-
     public function employeeIndex()
     {
         $employee = Employee::all();
+
         return response()->json($employee);
     }
 
@@ -60,21 +63,26 @@ class EmployeeController extends Controller
      *      tags={"employee"},
      *      summary="Get a one employee",
      *      description="Returns a one employee",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -93,10 +101,10 @@ class EmployeeController extends Controller
      *   ),
      *  )
      */
-
     public function employeeShow($id)
     {
-        $employee = DB::table('employees')->select('firstname','lastname','job','id_users')->where('id', '=', $id)->get();
+        $employee = DB::table('employees')->select('firstname', 'lastname', 'job', 'id_users')->where('id', '=', $id)->get();
+
         return response()->json($employee);
     }
 
@@ -112,21 +120,26 @@ class EmployeeController extends Controller
      *      tags={"employee"},
      *      summary="Delete a one employee",
      *      description="Returns a one employee",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -145,11 +158,10 @@ class EmployeeController extends Controller
      *   ),
      *  )
      */
-
     public function employeeDestroy($id)
     {
         $employee = DB::table('employees')->where('id', '=', $id)->delete();
+
         return response()->json($employee);
     }
 }
-

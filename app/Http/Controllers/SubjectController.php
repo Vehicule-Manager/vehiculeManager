@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subject;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SubjectController extends Controller
 {
@@ -21,13 +21,16 @@ class SubjectController extends Controller
 
      *      summary="Get List Of subjects",
      *      description="Returns all subjects",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -46,10 +49,10 @@ class SubjectController extends Controller
      *   ),
      *  )
      */
-
     public function subjectIndex()
     {
         $subject = Subject::all();
+
         return response()->json($subject);
     }
 
@@ -61,21 +64,26 @@ class SubjectController extends Controller
 
      *      summary="Get Of subjects",
      *      description="Returns the subjects",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -94,12 +102,13 @@ class SubjectController extends Controller
      *   ),
      *  )
      */
-
     public function subjectShow($id)
     {
         $subject = DB::table('subjects')->select('name')->where('id', '=', $id)->get();
+
         return response()->json($subject);
     }
+
     public function subjectUpdate($id, Request $request)
     {
         return response()->json();
@@ -113,21 +122,26 @@ class SubjectController extends Controller
 
      *      summary="Get Of Status",
      *      description="Returns the status",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -146,10 +160,10 @@ class SubjectController extends Controller
      *   ),
      *  )
      */
-
     public function subjectDestroy($id)
     {
         $subject = DB::table('subjects')->where('id', '=', $id)->delete();
+
         return response()->json($subject);
     }
 }

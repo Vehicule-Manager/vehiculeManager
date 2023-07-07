@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('civility',3);
-            $table->string('firstname',50);
+            $table->string('civility', 3);
+            $table->string('firstname', 50);
             $table->string('lastname', 50);
             $table->date('birthDate');
             $table->string('address', 150);
@@ -28,7 +28,7 @@ return new class extends Migration
 
             $table->timestamps();
         });
-        Schema::table('clients',function ($table){
+        Schema::table('clients', function ($table) {
             $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_creditInfos')->references('id')->on('credit_infos')->onDelete('cascade');
         });

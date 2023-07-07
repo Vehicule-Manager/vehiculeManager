@@ -1,29 +1,28 @@
 <?php
 
-
-use App\Http\Controllers\EnergieController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\TodoController;
-use App\Http\Controllers\CreditInfoController;
-use App\Http\Controllers\FamilySituationController;
-use App\Http\Controllers\MediaController;
-use App\Http\Controllers\ProfessionnalSituationController;
-use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CreditInfoController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EnergieController;
+use App\Http\Controllers\FamilySituationController;
 use App\Http\Controllers\GearBoxeController;
 use App\Http\Controllers\LeavingVehiculeController;
-use App\Http\Controllers\StatusController;
-use App\Http\Controllers\TypeController;
-use App\Http\Controllers\VehiculeController;
-use App\Http\Controllers\RoleController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\ModelCarController;
+use App\Http\Controllers\ProfessionnalSituationController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\StatusController;
+use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TodoController;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VehiculeController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,17 +39,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-    Route::post('/login', [AuthController::class, 'login']);
-    Route::post('/register', [AuthController::class, 'register']);
-    Route::post('/logout', [AuthController::class, 'logout']);
-    Route::post('/refresh', [AuthController::class, 'refresh']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/refresh', [AuthController::class, 'refresh']);
 
-
-    Route::get('/todos', [TodoController::class, 'index']);
-    Route::post('/todo', [TodoController::class, 'store']);
-    Route::get('/todo/{id}', [TodoController::class, 'show']);
-    Route::put('/todo/{id}', [TodoController::class, 'update']);
-    Route::delete('/todo/{id}', [TodoController::class, 'destroy']);
+Route::get('/todos', [TodoController::class, 'index']);
+Route::post('/todo', [TodoController::class, 'store']);
+Route::get('/todo/{id}', [TodoController::class, 'show']);
+Route::put('/todo/{id}', [TodoController::class, 'update']);
+Route::delete('/todo/{id}', [TodoController::class, 'destroy']);
 
 // Route for Appointment
 // List of all appointment

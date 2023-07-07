@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Spatie\QueryBuilder\QueryBuilder;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class ArticleController extends Controller
 {
@@ -22,13 +22,16 @@ class ArticleController extends Controller
 
      *      summary="Get Of Article",
      *      description="Returns the article",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -47,11 +50,11 @@ class ArticleController extends Controller
      *   ),
      *  )
      */
-
     public function articleIndex()
     {
         $article = QueryBuilder::for(Article::class)
             ->paginate(12);
+
         return response()->json($article);
     }
 
@@ -63,21 +66,26 @@ class ArticleController extends Controller
 
      *      summary="Get Of Article",
      *      description="Returns the article",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -96,10 +104,10 @@ class ArticleController extends Controller
      *   ),
      *  )
      */
-
     public function articleShow($id)
     {
         $article = DB::table('articles')->select('title', 'content')->where('id', '=', $id)->get();
+
         return response()->json($article);
     }
 
@@ -116,21 +124,26 @@ class ArticleController extends Controller
 
      *      summary="Get Of Article",
      *      description="Returns the article",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -149,10 +162,10 @@ class ArticleController extends Controller
      *   ),
      *  )
      */
-
     public function brandDestroy($id)
     {
         $article = DB::table('articles')->where('id', '=', $id)->delete();
+
         return response()->json($article);
     }
 }

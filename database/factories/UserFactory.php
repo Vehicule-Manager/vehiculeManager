@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-
 class UserFactory extends Factory
 {
     /**
@@ -18,8 +17,8 @@ class UserFactory extends Factory
         return [
             'login' => $this->faker->userName(),
             'password' => $this->faker->password(),
-            'mail'=> $this->faker->email(),
-            'mailVerified'=> $this->faker->boolean(),
+            'mail' => $this->faker->email(),
+            'mailVerified' => $this->faker->boolean(),
             'id_roles' => Role::all()->random()->id,
         ];
     }

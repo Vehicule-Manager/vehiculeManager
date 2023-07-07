@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Client;
 use App\Models\Energie;
 use App\Models\GearBoxe;
+use App\Models\ModelCar;
 use App\Models\Status;
 use App\Models\Type;
-use App\Models\ModelCar;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Vehicule>
@@ -23,12 +23,13 @@ class VehiculeFactory extends Factory
     public function definition()
     {
         $randomModelCar = ModelCar::all()->random();
+
         return [
             'new' => $this->faker->boolean(),
             'firstDateCicrulate' => $this->faker->date('Y_m_d'),
             'description' => $this->faker->text(100),
             'horsepower' => $this->faker->randomNumber(3),
-            'price' => $this->faker->randomNumber(4,5),
+            'price' => $this->faker->randomNumber(4, 5),
             'enterDate' => $this->faker->date('Y_m_d'),
             'leavingDate' => $this->faker->date('Y_m_d'),
             'immatriculation' => $this->faker->numerify('##########'),
