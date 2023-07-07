@@ -18,8 +18,7 @@ sudo docker compose run --rm laravel php artisan migrate:fresh --seed
 
 # Generate key
 # FR: Generation de la clé
-sudo docker compose run --rm laraval php artisan key:generate 
-
+sudo docker compose run --rm laravel php artisan key:generate 
 # Launch containers
 # FR: Lancer les containers
 sudo docker compose up -d 
