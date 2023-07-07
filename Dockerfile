@@ -76,7 +76,7 @@ WORKDIR $APP_HOME
 USER ${USERNAME}
 
 # copy source files and config file
-COPY --chown=${USERNAME}:${USERNAME} ./my-project $APP_HOME/
+COPY --chown=${USERNAME}:${USERNAME} ./ $APP_HOME/
 # COPY --chown=${USERNAME}:${USERNAME} .env.$ENV $APP_HOME/.env
 
 # install all PHP dependencies
