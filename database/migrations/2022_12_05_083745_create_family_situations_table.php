@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('family_situations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',20);
+            $table->string('name', 20);
             $table->integer('numberOfChild');
             $table->timestamps();
         });

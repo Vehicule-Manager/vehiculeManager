@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('login',25);
-            $table->string('password',255);
+            $table->string('login', 25);
+            $table->string('password', 255);
             $table->string('mail', 100);
             $table->boolean('mailVerified');
             $table->integer('id_roles')->unsigned();
             $table->timestamps();
         });
-        Schema::table('users',function ($table){
+        Schema::table('users', function ($table) {
             $table->foreign('id_roles')
                 ->references('id')
                 ->on('roles')

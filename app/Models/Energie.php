@@ -10,5 +10,6 @@ class Energie extends Model
     use HasFactory;
 
     protected $table = 'energies';
+
     protected $fillable = ['name'];
 }

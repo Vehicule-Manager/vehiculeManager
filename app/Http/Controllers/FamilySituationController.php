@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\FamilySituation;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FamilySituationController extends Controller
 {
@@ -21,13 +21,16 @@ class FamilySituationController extends Controller
 
      *      summary="Get List Of family Situation",
      *      description="Return the list family Situation",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -46,10 +49,10 @@ class FamilySituationController extends Controller
      *   ),
      *  )
      */
-
     public function familySituationIndex()
     {
         $familySituation = familySituation::all();
+
         return response()->json($familySituation);
     }
 
@@ -60,21 +63,26 @@ class FamilySituationController extends Controller
      *      tags={"situation familiale"},
      *      summary="Get a one family Situation",
      *      description="Returns a one family Situation",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -93,10 +101,10 @@ class FamilySituationController extends Controller
      *   ),
      *  )
      */
-
     public function familySituationShow($id)
     {
-        $familySituation = DB::table('family_situations')->select('name','numberOfChild')->where('id', '=', $id)->get();
+        $familySituation = DB::table('family_situations')->select('name', 'numberOfChild')->where('id', '=', $id)->get();
+
         return response()->json($familySituation);
     }
 
@@ -112,21 +120,26 @@ class FamilySituationController extends Controller
      *      tags={"situation familiale"},
      *      summary="Delete a one family Situation",
      *      description="Returns a one family Situation",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -145,10 +158,10 @@ class FamilySituationController extends Controller
      *   ),
      *  )
      */
-
     public function familySituationDestroy($id)
     {
         $familySituation = DB::table('family_situations')->where('id', '=', $id)->delete();
+
         return response()->json($familySituation);
     }
 }

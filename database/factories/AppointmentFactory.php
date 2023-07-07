@@ -3,17 +3,16 @@
 namespace Database\Factories;
 
 use App\Models\Appointment;
-use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Employee;
 use App\Models\Client;
+use App\Models\Employee;
 use App\Models\Subject;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Appointment>
  */
 class AppointmentFactory extends Factory
 {
-
     protected $model = Appointment::class;
 
     /**

@@ -15,6 +15,7 @@ class TypeController extends Controller
         $type->name = 'test';
 
         $type->save();
+
         return response()->json();
     }
 
@@ -26,13 +27,16 @@ class TypeController extends Controller
 
      *      summary="Get List Of Vehicule",
      *      description="Returns all vehicule",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -51,10 +55,10 @@ class TypeController extends Controller
      *   ),
      *  )
      */
-
     public function typeIndex()
     {
         $type = Type::all();
+
         return response()->json($type);
     }
 
@@ -66,21 +70,26 @@ class TypeController extends Controller
 
      *      summary="Get Of Vehicule",
      *      description="Returns the vehicule",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -102,6 +111,7 @@ class TypeController extends Controller
     public function typeShow($id)
     {
         $type = DB::table('types')->select('name')->where('id', '=', $id)->get();
+
         return response()->json($type);
     }
 
@@ -118,21 +128,26 @@ class TypeController extends Controller
 
      *      summary="Get Of Vehicule",
      *      description="Returns the vehicule",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -154,6 +169,7 @@ class TypeController extends Controller
     public function typeDestroy($id)
     {
         $type = DB::table('types')->where('id', '=', $id)->delete();
+
         return response()->json($type);
     }
 }

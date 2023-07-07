@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Client;
 
 class ClientController extends Controller
 {
@@ -20,13 +20,16 @@ class ClientController extends Controller
      *      tags={"clients"},
      *      summary="Get List Of client",
      *      description="Return the list client",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -48,6 +51,7 @@ class ClientController extends Controller
     public function clientIndex()
     {
         $client = Client::all();
+
         return response()->json($client);
     }
 
@@ -58,21 +62,26 @@ class ClientController extends Controller
      *      tags={"clients"},
      *      summary="Get a one client",
      *      description="Returns a one client",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -94,6 +103,7 @@ class ClientController extends Controller
     public function clientShow($id)
     {
         $client = DB::table('clients')->select('civility', 'firstname', 'lastname', 'birthDate', 'address', 'optionalAddress', 'zipCode', 'city', 'id_users', 'id_creditInfos')->where('id', '=', $id)->get();
+
         return response()->json($client);
     }
 
@@ -110,21 +120,26 @@ class ClientController extends Controller
      *      tags={"clients"},
      *      summary="Delete a one client",
      *      description="Returns a one client",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -146,6 +161,7 @@ class ClientController extends Controller
     public function clientDestroy($id)
     {
         $client = DB::table('clients')->where('id', '=', $id)->delete();
+
         return response()->json($client);
     }
 }

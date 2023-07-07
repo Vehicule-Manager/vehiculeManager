@@ -9,7 +9,7 @@ class ProfessionnalSituation extends Model
 {
     use HasFactory;
 
-    protected  $table = 'professionnal_situations';
+    protected $table = 'professionnal_situations';
 
-    protected  $fillable = ['name'];
+    protected $fillable = ['name'];
 }

@@ -21,13 +21,16 @@ class BrandController extends Controller
 
      *      summary="Get List Of Brnad",
      *      description="Returns all brand",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -46,10 +49,10 @@ class BrandController extends Controller
      *   ),
      *  )
      */
-
     public function brandIndex()
     {
         $brand = Brand::all();
+
         return response()->json($brand);
     }
 
@@ -61,21 +64,26 @@ class BrandController extends Controller
 
      *      summary="Get Of Brand",
      *      description="Returns the brand",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -94,10 +102,10 @@ class BrandController extends Controller
      *   ),
      *  )
      */
-
     public function brandShow($id)
     {
         $brand = DB::table('brands')->select('id', 'name')->where('id', '=', $id)->get();
+
         return response()->json($brand);
     }
 
@@ -114,21 +122,26 @@ class BrandController extends Controller
 
      *      summary="Get Of Brand",
      *      description="Returns the brand",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -147,10 +160,10 @@ class BrandController extends Controller
      *   ),
      *  )
      */
-
     public function brandDestroy($id)
     {
-        $brand = DB::table('brands')->where('id','=',$id)->delete();
+        $brand = DB::table('brands')->where('id', '=', $id)->delete();
+
         return response()->json($brand);
     }
 }

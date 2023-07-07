@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Spatie\QueryBuilder\AllowedFilter;
-use Spatie\QueryBuilder\QueryBuilder;
 use App\Models\Vehicule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class VehiculeController extends Controller
 {
@@ -23,13 +23,16 @@ class VehiculeController extends Controller
 
      *      summary="Get List Of Vehicule",
      *      description="Returns all vehicule",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -48,11 +51,10 @@ class VehiculeController extends Controller
      *   ),
      *  )
      */
-
     public function vehiculeIndex()
     {
         $vehicules = QueryBuilder::for(Vehicule::class)
-            ->allowedFilters(AllowedFilter::exact('id_model_car'),AllowedFilter::exact('horsepower'), AllowedFilter::exact('id_statuses'), AllowedFilter::exact('id_clients'), AllowedFilter::exact('id_gear_boxes'), AllowedFilter::exact('id_brands'), AllowedFilter::exact('id_energies'), AllowedFilter::exact('id_types')) // Add the filters you want to allow, e.g., make, model, year
+            ->allowedFilters(AllowedFilter::exact('id_model_car'), AllowedFilter::exact('horsepower'), AllowedFilter::exact('id_statuses'), AllowedFilter::exact('id_clients'), AllowedFilter::exact('id_gear_boxes'), AllowedFilter::exact('id_brands'), AllowedFilter::exact('id_energies'), AllowedFilter::exact('id_types')) // Add the filters you want to allow, e.g., make, model, year
             ->paginate(9);
 
         return response()->json($vehicules);
@@ -66,21 +68,26 @@ class VehiculeController extends Controller
 
      *      summary="Get Of Vehicule",
      *      description="Returns the vehicule",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -101,9 +108,10 @@ class VehiculeController extends Controller
      */
     public function vehiculeShow($id)
     {
-        $vehicule = DB::table('vehicules')->select('id', 'new','firstDateCicrulate','description','horsepower',
-            'price','enterDate','leavingDate', 'immatriculation','id_statuses','id_clients','id_gear_boxes','id_brands',
-            'id_energies','id_types','id_model_car')->where('id', '=', $id)->get();
+        $vehicule = DB::table('vehicules')->select('id', 'new', 'firstDateCicrulate', 'description', 'horsepower',
+            'price', 'enterDate', 'leavingDate', 'immatriculation', 'id_statuses', 'id_clients', 'id_gear_boxes', 'id_brands',
+            'id_energies', 'id_types', 'id_model_car')->where('id', '=', $id)->get();
+
         return response()->json($vehicule);
     }
 
@@ -120,21 +128,26 @@ class VehiculeController extends Controller
 
      *      summary="Get Of Vehicule",
      *      description="Returns the vehicule",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -155,7 +168,8 @@ class VehiculeController extends Controller
      */
     public function vehiculeDestroy($id)
     {
-        $vehicule = DB::table('vehicules')->where('id','=',$id)->delete();
+        $vehicule = DB::table('vehicules')->where('id', '=', $id)->delete();
+
         return response()->json($vehicule);
     }
 
@@ -167,13 +181,16 @@ class VehiculeController extends Controller
 
      *      summary="Get List Of Vehicule",
      *      description="Returns all vehicule",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -192,10 +209,10 @@ class VehiculeController extends Controller
      *   ),
      *  )
      */
-
-     public function vehiculeTable()
-     {
+    public function vehiculeTable()
+    {
         $vehicules = Vehicule::all();
+
         return response()->json($vehicules);
-     }
+    }
 }

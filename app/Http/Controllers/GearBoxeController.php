@@ -21,13 +21,16 @@ class GearBoxeController extends Controller
 
      *      summary="Get List Of gearBoxe",
      *      description="Return the list gearBoxe",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -46,10 +49,10 @@ class GearBoxeController extends Controller
      *   ),
      *  )
      */
-
     public function gearBoxeIndex()
     {
         $gearBoxe = GearBoxe::all();
+
         return response()->json($gearBoxe);
     }
 
@@ -60,21 +63,26 @@ class GearBoxeController extends Controller
      *      tags={"gearBoxe"},
      *      summary="Get a one gearBoxe",
      *      description="Returns a one gearBoxe",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -93,10 +101,10 @@ class GearBoxeController extends Controller
      *   ),
      *  )
      */
-
     public function gearBoxeShow($id)
     {
         $gearBoxe = DB::table('gear_boxes')->select('name')->where('id', '=', $id)->get();
+
         return response()->json($gearBoxe);
     }
 
@@ -112,21 +120,26 @@ class GearBoxeController extends Controller
      *      tags={"gearBoxe"},
      *      summary="Delete a one gearBoxe",
      *      description="Returns a one gearBoxe",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -145,10 +158,10 @@ class GearBoxeController extends Controller
      *   ),
      *  )
      */
-
     public function gearBoxeDestroy($id)
     {
-        $gearBoxe = DB::table('gear_boxes')->where('id','=',$id)->delete();
+        $gearBoxe = DB::table('gear_boxes')->where('id', '=', $id)->delete();
+
         return response()->json($gearBoxe);
     }
 }

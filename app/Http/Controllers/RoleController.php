@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Role;
 
 class RoleController extends Controller
 {
@@ -21,13 +21,16 @@ class RoleController extends Controller
 
      *      summary="Get List Of role",
      *      description="Return the list role",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -46,10 +49,10 @@ class RoleController extends Controller
      *   ),
      *  )
      */
-
     public function roleIndex()
     {
         $role = Role::all();
+
         return response()->json($role);
     }
 
@@ -60,21 +63,26 @@ class RoleController extends Controller
      *      tags={"role"},
      *      summary="Get a one role",
      *      description="Returns a one role",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -93,10 +101,10 @@ class RoleController extends Controller
      *   ),
      *  )
      */
-
     public function roleShow($id)
     {
         $role = DB::table('roles')->select('name')->where('id', '=', $id)->get();
+
         return response()->json($role);
     }
 
@@ -104,6 +112,7 @@ class RoleController extends Controller
     {
         return response()->json();
     }
+
     /**
      * @OA\Delete(
      *      path="/roles/{id}",
@@ -111,21 +120,26 @@ class RoleController extends Controller
      *      tags={"role"},
      *      summary="Delete a one role",
      *      description="Returns a one role",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -144,10 +158,10 @@ class RoleController extends Controller
      *   ),
      *  )
      */
-
     public function roleDestroy($id)
     {
         $role = DB::table('roles')->where('id', '=', $id)->delete();
+
         return response()->json($role);
     }
 }

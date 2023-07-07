@@ -4,11 +4,9 @@ namespace Database\Factories;
 
 use App\Models\FamilySituation;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class FamilySituationFactory extends Factory
 {
-
     protected $model = FamilySituation::class;
 
     /**
@@ -16,8 +14,6 @@ class FamilySituationFactory extends Factory
      *
      * @return array<string, mixed>
      */
-
-
     public function definition()
     {
         return [

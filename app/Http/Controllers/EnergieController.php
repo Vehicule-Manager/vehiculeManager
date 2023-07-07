@@ -21,13 +21,16 @@ class EnergieController extends Controller
 
      *      summary="Get Of Energie",
      *      description="Returns the energie",
+     *
      *      @OA\Response (
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType (
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response (
      *          response=401,
      *          description="Unauthenticated",
@@ -46,10 +49,10 @@ class EnergieController extends Controller
      *   ),
      *  )
      */
-
     public function energieIndex()
     {
         $energie = Energie::all();
+
         return response()->json($energie);
     }
 
@@ -61,21 +64,26 @@ class EnergieController extends Controller
 
      *      summary="Get Of Energie",
      *      description="Returns the energie",
+     *
      *     @OA\Parameter (
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema (
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response (
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType (
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response (
      *          response=401,
      *          description="Unauthenticated",
@@ -94,10 +102,10 @@ class EnergieController extends Controller
      *   ),
      *  )
      */
-
     public function energieShow($id)
     {
         $article = DB::table('energies')->select('name')->where('id', '=', $id)->get();
+
         return response()->json($article);
     }
 
@@ -114,21 +122,26 @@ class EnergieController extends Controller
 
      *      summary="Get Of Energie",
      *      description="Returns the energie",
+     *
      *     @OA\Parameter (
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema (
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response (
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response (
      *          response=401,
      *          description="Unauthenticated",
@@ -147,10 +160,10 @@ class EnergieController extends Controller
      *   ),
      *  )
      */
-
     public function energieDestroy($id)
     {
-        $energie = DB::table('energies')->where('id','=',$id)->delete();
+        $energie = DB::table('energies')->where('id', '=', $id)->delete();
+
         return response()->json($energie);
     }
 }

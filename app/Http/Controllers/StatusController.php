@@ -21,13 +21,16 @@ class StatusController extends Controller
 
      *      summary="Get List Of status",
      *      description="Returns all status",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -46,10 +49,10 @@ class StatusController extends Controller
      *   ),
      *  )
      */
-
     public function statusIndex()
     {
         $status = Status::all();
+
         return response()->json($status);
     }
 
@@ -61,21 +64,26 @@ class StatusController extends Controller
 
      *      summary="Get Of Status",
      *      description="Returns the status",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -94,10 +102,10 @@ class StatusController extends Controller
      *   ),
      *  )
      */
-
     public function statusShow($id)
     {
         $status = DB::table('statuses')->select('id', 'name')->where('id', '=', $id)->get();
+
         return response()->json($status);
     }
 
@@ -114,21 +122,26 @@ class StatusController extends Controller
 
      *      summary="Get Of Status",
      *      description="Returns the status",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -147,10 +160,10 @@ class StatusController extends Controller
      *   ),
      *  )
      */
-
     public function statusDestroy($id)
     {
-        $status = DB::table('Statuses')->where('id','=',$id)->delete();
+        $status = DB::table('Statuses')->where('id', '=', $id)->delete();
+
         return response()->json($status);
     }
 }

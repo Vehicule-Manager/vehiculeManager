@@ -21,13 +21,16 @@ class LeavingVehiculeController extends Controller
 
      *      summary="Get Of LeavingVehicule",
      *      description="Returns the leavingVehicule",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -46,10 +49,10 @@ class LeavingVehiculeController extends Controller
      *   ),
      *  )
      */
-
     public function leavingVehiculeIndex()
     {
         $leavingVehicule = LeavingVehicule::all();
+
         return response()->json($leavingVehicule);
     }
 
@@ -61,21 +64,26 @@ class LeavingVehiculeController extends Controller
 
      *      summary="Get Of LeavingVehicule",
      *      description="Returns the leavingVehicule",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -94,10 +102,10 @@ class LeavingVehiculeController extends Controller
      *   ),
      *  )
      */
-
     public function leavingVehiculeShow($id)
     {
-        $leavingVehicule = DB::table('leaving_vehicules')->select('leavingDate','renderDate','id_statuses','id_clients','id_vehicules')->where('id', '=', $id)->get();
+        $leavingVehicule = DB::table('leaving_vehicules')->select('leavingDate', 'renderDate', 'id_statuses', 'id_clients', 'id_vehicules')->where('id', '=', $id)->get();
+
         return response()->json($leavingVehicule);
     }
 
@@ -114,21 +122,26 @@ class LeavingVehiculeController extends Controller
 
      *      summary="Get Of LeavingVehicule",
      *      description="Returns the leavingVehicule",
+     *
      *     @OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -147,10 +160,10 @@ class LeavingVehiculeController extends Controller
      *   ),
      *  )
      */
-
     public function leavingVehiculeDestroy($id)
     {
-        $leavingVehicule = DB::table('leaving_vehicules')->where('id','=',$id)->delete();
+        $leavingVehicule = DB::table('leaving_vehicules')->where('id', '=', $id)->delete();
+
         return response()->json($leavingVehicule);
     }
 
@@ -162,21 +175,26 @@ class LeavingVehiculeController extends Controller
 
      *      summary="Get Of LeavingVehicule Client",
      *      description="Returns the leavingVehicule",
+     *
      *     @OA\Parameter(
      *      name="id_clients",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -195,7 +213,6 @@ class LeavingVehiculeController extends Controller
      *   ),
      *  )
      */
-
     public function leasingVehiclesByClientId($clientId)
     {
         $leasingVehicles = DB::table('leaving_vehicules')

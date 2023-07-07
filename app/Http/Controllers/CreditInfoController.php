@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\CreditInfo;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CreditInfoController extends Controller
 {
@@ -21,13 +21,16 @@ class CreditInfoController extends Controller
 
      *      summary="Get List Of credit infos",
      *      description="Return the list credit infos",
+     *
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -46,10 +49,10 @@ class CreditInfoController extends Controller
      *   ),
      *  )
      */
-
     public function creditInfosIndex()
     {
         $creditInfo = CreditInfo::all();
+
         return response()->json($creditInfo);
     }
 
@@ -60,21 +63,26 @@ class CreditInfoController extends Controller
      *      tags={"credit infos"},
      *      summary="Get a one credit infos",
      *      description="Returns a one credit infos",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -93,10 +101,10 @@ class CreditInfoController extends Controller
      *   ),
      *  )
      */
-
     public function creditInfosShow($id)
     {
         $creditInfo = DB::table('credit_infos')->select('placeOfBirth', 'nationality', 'budgets', 'contract', 'contractDate', 'banquet', 'professionnalStatus', 'familysituation')->where('id', '=', $id)->get();
+
         return response()->json($creditInfo);
     }
 
@@ -112,21 +120,26 @@ class CreditInfoController extends Controller
      *      tags={"credit infos"},
      *      summary="Delete a one credit infos",
      *      description="Returns a one credit infos",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -145,10 +158,10 @@ class CreditInfoController extends Controller
      *   ),
      *  )
      */
-
     public function creditInfosDestroy($id)
     {
         $creditInfo = DB::table('credit_infos')->where('id', '=', $id)->delete();
+
         return response()->json($creditInfo);
     }
 }
