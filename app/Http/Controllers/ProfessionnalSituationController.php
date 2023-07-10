@@ -17,7 +17,7 @@ class ProfessionnalSituationController extends Controller
      * @OA\Get(
      *      path="/professional-situations",
      *      operationId="ProfessionnalSituationIndex",
-     *      tags={"situation professionnelle"},
+     *      tags={"Professional situation"},
 
      *      summary="Get List Of Professionnal Situation",
      *      description="Return the list Professionnal Situation",
@@ -60,7 +60,7 @@ class ProfessionnalSituationController extends Controller
      * @OA\Get(
      *      path="/professional-situations/{id}",
      *      operationId="ProfessionnalSituationShow",
-     *      tags={"situation professionnelle"},
+     *      tags={"Professional situation"},
      *      summary="Get a one Professionnal Situation",
      *      description="Returns a one Professionnal Situation",
      *
@@ -117,7 +117,7 @@ class ProfessionnalSituationController extends Controller
      * @OA\Delete(
      *      path="/professional-situations/{id}",
      *      operationId="ProfessionnalSituationDestroy",
-     *      tags={"situation professionnelle"},
+     *      tags={"Professional situation"},
      *      summary="Delete a one Professionnal Situation",
      *      description="Returns a one Professionnal Situation",
      *

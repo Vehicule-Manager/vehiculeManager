@@ -17,7 +17,7 @@ class LeavingVehiculeController extends Controller
      * @OA\Get (
      *      path="/leavingVehicules",
      *      operationId="leavingVehiculeIndex",
-     *      tags={"leavingVehicule"},
+     *      tags={"Leaving Vehicule"},
 
      *      summary="Get Of LeavingVehicule",
      *      description="Returns the leavingVehicule",
@@ -60,7 +60,7 @@ class LeavingVehiculeController extends Controller
      * @OA\Get (
      *      path="/leavingVehicules/{id}",
      *      operationId="leavingVehiculeShow",
-     *      tags={"leavingVehicule"},
+     *      tags={"Leaving Vehicule"},
 
      *      summary="Get Of LeavingVehicule",
      *      description="Returns the leavingVehicule",
@@ -118,7 +118,7 @@ class LeavingVehiculeController extends Controller
      * @OA\Delete (
      *      path="/leavingVehicules/{id}",
      *      operationId="leavingVehiculeDestroy",
-     *      tags={"leavingVehicule"},
+     *      tags={"Leaving Vehicule"},
 
      *      summary="Get Of LeavingVehicule",
      *      description="Returns the leavingVehicule",

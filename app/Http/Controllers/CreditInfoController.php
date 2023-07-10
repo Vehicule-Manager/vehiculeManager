@@ -17,7 +17,7 @@ class CreditInfoController extends Controller
      * @OA\Get(
      *      path="/credit-infos",
      *      operationId="creditInfosIndex",
-     *      tags={"credit infos"},
+     *      tags={"Credit info"},
 
      *      summary="Get List Of credit infos",
      *      description="Return the list credit infos",
@@ -60,7 +60,7 @@ class CreditInfoController extends Controller
      * @OA\Get(
      *      path="/credit-infos/{id}",
      *      operationId="creditInfosShow",
-     *      tags={"credit infos"},
+     *      tags={"Credit info"},
      *      summary="Get a one credit infos",
      *      description="Returns a one credit infos",
      *
@@ -117,7 +117,7 @@ class CreditInfoController extends Controller
      * @OA\Delete(
      *      path="/credit-infos/{id}",
      *      operationId="creditInfosDestroy",
-     *      tags={"credit infos"},
+     *      tags={"Credit info"},
      *      summary="Delete a one credit infos",
      *      description="Returns a one credit infos",
      *

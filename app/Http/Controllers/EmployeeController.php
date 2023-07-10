@@ -17,7 +17,7 @@ class EmployeeController extends Controller
      * @OA\Get(
      *      path="/employees",
      *      operationId="employeeIndex",
-     *      tags={"employee"},
+     *      tags={"Employee"},
 
      *      summary="Get List Of employee",
      *      description="Return the list employee",
@@ -60,7 +60,7 @@ class EmployeeController extends Controller
      * @OA\Get(
      *      path="/employees/{id}",
      *      operationId="employeeShow",
-     *      tags={"employee"},
+     *      tags={"Employee"},
      *      summary="Get a one employee",
      *      description="Returns a one employee",
      *
@@ -117,7 +117,7 @@ class EmployeeController extends Controller
      * @OA\Delete(
      *      path="/employees/{id}",
      *      operationId="employeeDestroy",
-     *      tags={"employee"},
+     *      tags={"Employee"},
      *      summary="Delete a one employee",
      *      description="Returns a one employee",
      *

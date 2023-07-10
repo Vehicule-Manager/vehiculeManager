@@ -212,7 +212,7 @@ class AuthController extends Controller
     /**
      * @OA\Get(
      *     path="/user-profile",
-     *     tags={"User"},
+     *     tags={"Authentification"},
      *     summary="Obtenir le profil de l'utilisateur actuel.",
      *     operationId="obtenirProfilUtilisateur",
      *     security={{"bearerAuth":{}}},

@@ -17,7 +17,7 @@ class AppointmentController extends Controller
      * @OA\Get(
      *      path="/appointments",
      *      operationId="appointmentIndex",
-     *      tags={"rendez vous"},
+     *      tags={"Appointment"},
 
      *      summary="Get List Of appointment",
      *      description="Return the list appointment",
@@ -60,7 +60,7 @@ class AppointmentController extends Controller
      * @OA\Get(
      *      path="/appointments/{id}",
      *      operationId="appointmentShow",
-     *      tags={"rendez vous"},
+     *      tags={"Appointment"},
      *      summary="Get a one appointment",
      *      description="Returns a one appointment",
      *
@@ -117,7 +117,7 @@ class AppointmentController extends Controller
      * @OA\Delete(
      *      path="/appointments/{id}",
      *      operationId="appointmentDestroy",
-     *      tags={"rendez vous"},
+     *      tags={"Appointment"},
      *      summary="Delete a one appointment",
      *      description="Returns a one appointment",
      *
