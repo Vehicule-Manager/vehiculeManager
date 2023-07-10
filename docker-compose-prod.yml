@@ -10,6 +10,8 @@ services:
       - MARIADB_DATABASE=${DB_DATABASE}
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
       - MARIADB_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./mysql_data:/var/lib/mysql
     networks:
       - laravel
 
