@@ -19,7 +19,7 @@ class VehiculeController extends Controller
      * @OA\Get(
      *      path="/vehicules",
      *      operationId="vehiculeIndex",
-     *      tags={"vehicule"},
+     *      tags={"Vehicule"},
 
      *      summary="Get List Of Vehicule",
      *      description="Returns all vehicule",
@@ -64,7 +64,7 @@ class VehiculeController extends Controller
      * @OA\Get(
      *      path="/vehicules/{id}",
      *      operationId="vehiculeShow",
-     *      tags={"vehicule"},
+     *      tags={"Vehicule"},
 
      *      summary="Get Of Vehicule",
      *      description="Returns the vehicule",
@@ -124,7 +124,7 @@ class VehiculeController extends Controller
      * @OA\Delete(
      *      path="/vehicules/{id}",
      *      operationId="vehiculeDestroy",
-     *      tags={"vehicule"},
+     *      tags={"Vehicule"},
 
      *      summary="Get Of Vehicule",
      *      description="Returns the vehicule",
@@ -177,7 +177,7 @@ class VehiculeController extends Controller
      * @OA\Get(
      *      path="/vehicules",
      *      operationId="vehiculeTable",
-     *      tags={"vehicule"},
+     *      tags={"Vehicule"},
 
      *      summary="Get List Of Vehicule",
      *      description="Returns all vehicule",

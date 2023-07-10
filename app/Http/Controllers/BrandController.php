@@ -17,7 +17,7 @@ class BrandController extends Controller
      * @OA\Get(
      *      path="/brands",
      *      operationId="brandIndex",
-     *      tags={"brand"},
+     *      tags={"Brand"},
 
      *      summary="Get List Of Brnad",
      *      description="Returns all brand",
@@ -60,7 +60,7 @@ class BrandController extends Controller
      * @OA\Get(
      *      path="/brands/{id}",
      *      operationId="brandShow",
-     *      tags={"brand"},
+     *      tags={"Brand"},
 
      *      summary="Get Of Brand",
      *      description="Returns the brand",
@@ -118,7 +118,7 @@ class BrandController extends Controller
      * @OA\Delete(
      *      path="/brands/{id}",
      *      operationId="brandDestroy",
-     *      tags={"brand"},
+     *      tags={"Brand"},
 
      *      summary="Get Of Brand",
      *      description="Returns the brand",

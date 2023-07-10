@@ -23,7 +23,7 @@ class TypeController extends Controller
      * @OA\Get(
      *      path="/types",
      *      operationId="typeIndex",
-     *      tags={"type"},
+     *      tags={"Type"},
 
      *      summary="Get List Of Vehicule",
      *      description="Returns all vehicule",
@@ -66,7 +66,7 @@ class TypeController extends Controller
      * @OA\Get(
      *      path="/types/{id}",
      *      operationId="typeShow",
-     *      tags={"type"},
+     *      tags={"Type"},
 
      *      summary="Get Of Vehicule",
      *      description="Returns the vehicule",
@@ -124,7 +124,7 @@ class TypeController extends Controller
      * @OA\Delete(
      *      path="/types/{id}",
      *      operationId="typeDestroy",
-     *      tags={"type"},
+     *      tags={"Type"},
 
      *      summary="Get Of Vehicule",
      *      description="Returns the vehicule",
