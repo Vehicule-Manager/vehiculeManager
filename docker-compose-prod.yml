@@ -22,7 +22,7 @@ services:
         BUILD_ARGUMENT_ENV: prod
       dockerfile: ./Dockerfile
     volumes:
-      - ./:/var/www/html:cached
+      - .:/var/www/html:cached
     depends_on:
       - mariadb
     networks:
@@ -34,7 +34,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./:/var/www/html:ro,cached
+      - .:/var/www/html:ro,cached
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - laravel
