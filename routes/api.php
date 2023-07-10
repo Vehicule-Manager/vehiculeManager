@@ -45,7 +45,6 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout']);
 Route::post('/refresh', [AuthController::class, 'refresh']);
 
-
 Route::get('/todos', [TodoController::class, 'index']);
 Route::post('/todo', [TodoController::class, 'store']);
 Route::get('/todo/{id}', [TodoController::class, 'show']);

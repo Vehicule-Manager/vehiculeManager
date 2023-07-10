@@ -172,21 +172,26 @@ class ClientController extends Controller
      *      tags={"clients"},
      *      summary="Get a one client",
      *      description="Returns a one client",
+     *
      *@OA\Parameter(
      *      name="id",
      *      in="path",
      *      required=true,
+     *
      *      @OA\Schema(
      *           type="integer"
      *      )
      *   ),
+     *
      *     @OA\Response(
      *          response=200,
      *          description="Successful operation",
+     *
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
      *      ),
+     *
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -208,6 +213,7 @@ class ClientController extends Controller
     public function clientByUser($id)
     {
         $client = DB::table('clients')->select('id', 'civility', 'firstname', 'lastname', 'birthDate', 'address', 'optionalAddress', 'zipCode', 'city', 'id_creditInfos')->where('id_users', '=', $id)->get();
+
         return response()->json($client);
     }
 }

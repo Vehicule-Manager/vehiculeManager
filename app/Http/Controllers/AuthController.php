@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use PHPOpenSourceSaver\JWTAuth\Exceptions\JWTException;
 use PHPOpenSourceSaver\JWTAuth\JWTAuth;
@@ -32,12 +32,16 @@ class AuthController extends Controller
      *     description="Authentification de l'utilisateur",
      *     operationId="authUser",
      *     tags={"Authentification"},
+     *
      *     @OA\RequestBody(
      *         description="Informations d'authentification",
      *         required=true,
+     *
      *         @OA\MediaType(
      *             mediaType="application/json",
+     *
      *             @OA\Schema(
+     *
      *                 @OA\Property(
      *                     property="mail",
      *                     type="string"
@@ -49,10 +53,13 @@ class AuthController extends Controller
      *             )
      *         )
      *     ),
+     *
      *     @OA\Response(
      *         response="200",
      *         description="Authentification réussie",
+     *
      *         @OA\JsonContent(
+     *
      *             @OA\Property(
      *                 property="access_token",
      *                 type="string"
@@ -69,10 +76,13 @@ class AuthController extends Controller
      *             )
      *         )
      *     ),
+     *
      *     @OA\Response(
      *         response="400",
      *         description="Information de connexion erronée",
+     *
      *         @OA\JsonContent(
+     *
      *             @OA\Property(
      *                 property="success",
      *                 type="boolean",
@@ -104,7 +114,7 @@ class AuthController extends Controller
         $user = user::where('mail', $request->mail)->first();
 
         if ($user && Hash::check($request->password, $user->password)) {
-            if (!$token = Auth::attempt($credentials)) {
+            if (! $token = Auth::attempt($credentials)) {
                 return response()->json([
                     'success' => false,
                     'message' => 'Information de connexion erronée',
@@ -114,7 +124,8 @@ class AuthController extends Controller
             }
 
         } else {
-            $response = ["message" => 'Information de connexion erronée'];
+            $response = ['message' => 'Information de connexion erronée'];
+
             return response()->json($response, 422);
         }
     }
@@ -154,7 +165,6 @@ class AuthController extends Controller
         ]);
     }
 
-
     /**
      * @OA\Get(
      *     path="/refresh",
@@ -162,23 +172,28 @@ class AuthController extends Controller
      *     summary="Refresh the current JWT token.",
      *     operationId="refreshToken",
      *     security={{"bearerAuth":{}}},
+     *
      *     @OA\Response(response=200, description="Successful operation",
+     *
      *         @OA\JsonContent(
+     *
      *             @OA\Property(property="message", type="string", example="connected"),
      *             @OA\Property(property="access_token", type="string"),
      *             @OA\Property(property="token_type", type="string"),
      *             @OA\Property(property="expires_in", type="integer", description="Expiration time in seconds")
      *         )
      *     ),
+     *
      *     @OA\Response(response=401,description="Unauthorized",
+     *
      *         @OA\JsonContent(
+     *
      *             @OA\Property(property="error", type="string"),
      *             @OA\Property(property="message", type="string")
      *         )
      *     )
      * )
      */
-
     public function refresh()
     {
         return $this->respondWithToken(auth()->refresh());
@@ -190,7 +205,7 @@ class AuthController extends Controller
             'message' => 'connected',
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 60,
         ]);
     }
 
@@ -201,10 +216,13 @@ class AuthController extends Controller
      *     summary="Obtenir le profil de l'utilisateur actuel.",
      *     operationId="obtenirProfilUtilisateur",
      *     security={{"bearerAuth":{}}},
+     *
      *     @OA\Response(
      *         response=200,
      *         description="Opération réussie",
+     *
      *         @OA\JsonContent(
+     *
      *             @OA\Property(property="message", type="string"),
      *             @OA\Property(
      *                 property="user",
@@ -219,10 +237,13 @@ class AuthController extends Controller
      *             ),
      *          ),
      *     ),
+     *
      *     @OA\Response(
      *         response=401,
      *         description="Non autorisé",
+     *
      *         @OA\JsonContent(
+     *
      *             @OA\Property(property="error", type="string"),
      *             @OA\Property(property="message", type="string")
      *         )
@@ -235,7 +256,7 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => 'success',
-            'user' => $user
+            'user' => $user,
         ]);
     }
 
@@ -246,20 +267,25 @@ class AuthController extends Controller
      *     summary="Refresh the current JWT token.",
      *     operationId="checkUserToken",
      *     security={{"bearerAuth":{}}},
+     *
      *     @OA\Response(response=200, description="Successful operation",
+     *
      *         @OA\JsonContent(
+     *
      *             @OA\Property(property="message", type="string", example="connected"),
      *         )
      *     ),
+     *
      *     @OA\Response(response=400,description="disconnected",
+     *
      *         @OA\JsonContent(
+     *
      *             @OA\Property(property="error", type="string"),
      *             @OA\Property(property="message", type="string")
      *         )
      *     )
      * )
      */
-
     public function checkUserToken()
     {
         try {
@@ -286,4 +312,3 @@ class AuthController extends Controller
         }
     }
 }
-
