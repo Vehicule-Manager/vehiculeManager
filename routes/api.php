@@ -21,6 +21,7 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VehiculeByArticleController;
+use App\Http\Controllers\VehiculeByClientController;
 use App\Http\Controllers\VehiculeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -234,6 +235,16 @@ Route::put('/articles/vehicules/{id}', [VehiculeByArticleController::class, 'art
 Route::delete('/articles/vehicules/{id}', [VehiculeByArticleController::class, 'articleByVehiculeDestroy']);
 Route::get('/vehicules/{id}/articles', [VehiculeByArticleController::class, 'articleByVehiculeShowByVehicle']);
 Route::get('/articles/{id}/vehicules', [VehiculeByArticleController::class, 'articleByVehiculeShowByArticle']);
+
+// Route for VehiculesByClients
+Route::get('/clients/vehicules', [VehiculeByClientController::class, 'vehiculeByClientIndex']);
+Route::get('/clients/vehicules/{id}' , [VehiculeByClientController::class, 'vehiculeByClientShow']);
+Route::post('/clients/vehicules', [VehiculeByClientController::class, 'vehiculeByClientStore']);
+Route::put('/clients/vehicules/{id}' , [VehiculeByClientController::class, 'vehiculeByClientUpdate']);
+Route::delete('/clients/vehicules/{id}', [VehiculeByClientController::class, 'vehiculeByClientDestroy']);
+Route::get('/clients/{id}/vehicules', [VehiculeByClientController::class, 'vehiculeByClientShowByVehicle']);
+
+
 
 // Route for Subject
 // List of all subjects

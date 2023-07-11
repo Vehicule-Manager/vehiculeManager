@@ -22,6 +22,7 @@ use App\Models\Type;
 use App\Models\User;
 use App\Models\Vehicule;
 use App\Models\VehiculeByArticle;
+use App\Models\VehiculeByClient;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -142,6 +143,7 @@ class DatabaseSeeder extends Seeder
         LeavingVehicule::factory(5)->create();
         Article::factory(25)->create();
         VehiculeByArticle::factory(15)->create();
+        VehiculeByClient::factory(15)->create();
         FamilySituation::factory(5)->create();
         ProfessionnalSituation::factory(5)->create();
     }
