@@ -54,7 +54,7 @@ class VehiculeController extends Controller
     public function vehiculeIndex()
     {
         $vehicules = QueryBuilder::for(Vehicule::class)
-            ->allowedFilters(AllowedFilter::exact('id_model_car'), AllowedFilter::exact('horsepower'), AllowedFilter::exact('id_statuses'), AllowedFilter::exact('id_clients'), AllowedFilter::exact('id_gear_boxes'), AllowedFilter::exact('id_brands'), AllowedFilter::exact('id_energies'), AllowedFilter::exact('id_types')) // Add the filters you want to allow, e.g., make, model, year
+            ->allowedFilters(AllowedFilter::exact('id_model_car'), AllowedFilter::exact('horsepower'), AllowedFilter::exact('id_statuses'), AllowedFilter::exact('id_gear_boxes'), AllowedFilter::exact('id_brands'), AllowedFilter::exact('id_energies'), AllowedFilter::exact('id_types')) // Add the filters you want to allow, e.g., make, model, year
             ->paginate(9);
 
         return response()->json($vehicules);
@@ -109,7 +109,7 @@ class VehiculeController extends Controller
     public function vehiculeShow($id)
     {
         $vehicule = DB::table('vehicules')->select('id', 'new', 'firstDateCicrulate', 'description', 'horsepower',
-            'price', 'enterDate', 'leavingDate', 'immatriculation', 'id_statuses', 'id_clients', 'id_gear_boxes', 'id_brands',
+            'price', 'enterDate', 'leavingDate', 'immatriculation', 'id_statuses', 'id_gear_boxes', 'id_brands',
             'id_energies', 'id_types', 'id_model_car')->where('id', '=', $id)->get();
 
         return response()->json($vehicule);

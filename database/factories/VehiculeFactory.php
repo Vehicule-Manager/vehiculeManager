@@ -34,7 +34,6 @@ class VehiculeFactory extends Factory
             'leavingDate' => $this->faker->date('Y_m_d'),
             'immatriculation' => $this->faker->numerify('##########'),
             'id_statuses' => Status::all()->random()->id,
-            'id_clients' => Client::all()->random()->id,
             'id_gear_boxes' => GearBoxe::all()->random()->id,
             'id_brands' => $randomModelCar->id_brands,
             'id_energies' => Energie::all()->random()->id,

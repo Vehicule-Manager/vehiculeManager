@@ -12,5 +12,5 @@ class Vehicule extends Model
     protected $table = 'vehicules';
 
     protected $fillable = ['new', 'firstDateCicrulate', 'description', 'horsepower', 'price', 'enterDate', 'leavingDate',
-        'immatriculation', 'id_statuses', 'id_clients', 'id_gear_boxes', 'id_brands', 'id_energies', 'id_types', 'id_model_car'];
+        'immatriculation', 'id_statuses', 'id_gear_boxes', 'id_brands', 'id_energies', 'id_types', 'id_model_car'];
 }

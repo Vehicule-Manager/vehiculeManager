@@ -24,7 +24,6 @@ return new class extends Migration
             $table->date('leavingDate');
             $table->string('immatriculation', '10');
             $table->integer('id_statuses')->unsigned();
-            $table->integer('id_clients')->unsigned();
             $table->integer('id_gear_boxes')->unsigned();
             $table->integer('id_brands')->unsigned();
             $table->integer('id_energies')->unsigned();
@@ -40,11 +39,6 @@ return new class extends Migration
                 ->on('statuses')
                 ->onDelete('cascade');
 
-            $table
-                ->foreign('id_clients')
-                ->references('id')
-                ->on('clients')
-                ->onDelete('cascade');
 
             $table
                 ->foreign('id_gear_boxes')
