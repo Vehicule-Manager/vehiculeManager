@@ -235,7 +235,6 @@ Route::delete('/articles/vehicules/{id}', [VehiculeByArticleController::class, '
 Route::get('/vehicules/{id}/articles', [VehiculeByArticleController::class, 'articleByVehiculeShowByVehicle']);
 Route::get('/articles/{id}/vehicules', [VehiculeByArticleController::class, 'articleByVehiculeShowByArticle']);
 
-
 // Route for Subject
 // List of all subjects
 Route::get('/subjects', [SubjectController::class, 'subjectIndex']);

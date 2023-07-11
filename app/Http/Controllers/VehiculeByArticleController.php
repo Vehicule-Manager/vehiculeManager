@@ -220,7 +220,6 @@ class VehiculeByArticleController extends Controller
         return response()->json($vehiculeByArticle);
     }
 
-
     /**
      * @OA\Get(
      *      path="/articles/{id}/vehicules",
