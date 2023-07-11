@@ -238,13 +238,11 @@ Route::get('/articles/{id}/vehicules', [VehiculeByArticleController::class, 'art
 
 // Route for VehiculesByClients
 Route::get('/clients/vehicules', [VehiculeByClientController::class, 'vehiculeByClientIndex']);
-Route::get('/clients/vehicules/{id}' , [VehiculeByClientController::class, 'vehiculeByClientShow']);
+Route::get('/clients/vehicules/{id}', [VehiculeByClientController::class, 'vehiculeByClientShow']);
 Route::post('/clients/vehicules', [VehiculeByClientController::class, 'vehiculeByClientStore']);
-Route::put('/clients/vehicules/{id}' , [VehiculeByClientController::class, 'vehiculeByClientUpdate']);
+Route::put('/clients/vehicules/{id}', [VehiculeByClientController::class, 'vehiculeByClientUpdate']);
 Route::delete('/clients/vehicules/{id}', [VehiculeByClientController::class, 'vehiculeByClientDestroy']);
 Route::get('/clients/{id}/vehicules', [VehiculeByClientController::class, 'vehiculeByClientShowByVehicle']);
-
-
 
 // Route for Subject
 // List of all subjects

@@ -27,7 +27,6 @@ return new class extends Migration
                 ->on('vehicules')
                 ->onDelete('cascade');
 
-
             $table
                 ->foreign('id_clients')
                 ->references('id')
