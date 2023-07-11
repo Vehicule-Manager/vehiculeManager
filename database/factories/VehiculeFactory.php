@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Client;
 use App\Models\Energie;
 use App\Models\GearBoxe;
 use App\Models\ModelCar;

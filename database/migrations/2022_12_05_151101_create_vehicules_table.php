@@ -39,7 +39,6 @@ return new class extends Migration
                 ->on('statuses')
                 ->onDelete('cascade');
 
-
             $table
                 ->foreign('id_gear_boxes')
                 ->references('id')
