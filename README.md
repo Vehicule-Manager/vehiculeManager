@@ -2,18 +2,29 @@
 
 ## ![Docker](https://img.shields.io/badge/-Docker-black?style=flat-square&logo=docker) Commandes Docker
 
-- Démarrer docker - docker-compose up
-- voir les conteneurs - docker ps
-- Démarrer un service - docker exec -it <nom du conteneur> bash
-- Connexion BDD - mysql -h < Host > -u < user > -p < password >
+- Démarrer docker : docker-compose up
+- voir les conteneurs : docker ps
+- Démarrer un service : docker exec -it <nom du conteneur> bash
+- Connexion BDD : mysql -h < Host > -u < user > -p < password >
 
+## ![MariaDB](https://img.shields.io/badge/MariaDB-black?style=flat-square&logo=mariadb) Commandes débuter le projet 
+
+- Démarrer docker : docker-compose up
+- Générer le vendor : docker compose run laravel composer install
+- Faire un migrate : docker-compose run laravel php artisan migrate
+- Commande pour générer les seeders : docker compose run laravel php artisan db:seed
 
 ## ![MariaDB](https://img.shields.io/badge/MariaDB-black?style=flat-square&logo=mariadb) Commandes Database
 
-- Créer un model + migration : docker-compose run myapp php artisan make:model < nom du model > -m
-- Faire un migrate : docker-compose run laravel php artisan migrate
+- créer un controller : docker compose run laravel php artisan make:controller < nom du controller >
+- Créer un model + migration : docker compose run laravel php artisan make:model < nom du model > -m
+- Faire un migrate : docker compose run laravel php artisan migrate
 - Commande pour generate swagger : sudo docker-compose run laravel php artisan l5-swagger:generate
 - Commande pour générer les seeders : docker compose run laravel php artisan db:seed
+
+## ![MariaDB](https://img.shields.io/badge/MariaDB-black?style=flat-square&logo=mariadb) Commandes pour Auth
+
+- Générer la clé jwt : docker compose run laravel php artisan jwt:secret
 
 ## ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github) Commandes GitHub de base
 

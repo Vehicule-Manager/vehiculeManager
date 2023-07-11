@@ -162,10 +162,53 @@ class ArticleController extends Controller
      *   ),
      *  )
      */
-    public function brandDestroy($id)
+    public function articleDestroy($id)
     {
         $article = DB::table('articles')->where('id', '=', $id)->delete();
 
         return response()->json($article);
+    }
+
+    /**
+     * @OA\Get(
+     *      path="/table/articles",
+     *      operationId="articleTable",
+     *      tags={"Article"},
+
+     *      summary="Get Of Article",
+     *      description="Returns the article",
+     *
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
+    public function articleTable()
+    {
+        $articles = Article::all();
+
+        return response()->json($articles);
     }
 }
