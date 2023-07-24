@@ -92,7 +92,7 @@ class DatabaseSeeder extends Seeder
         $admin->save();
 
         $clientTest = new Client();
-        $clientTest->civility = 'm';
+        $clientTest->civility = 'M';
         $clientTest->firstName = 'Aled';
         $clientTest->lastName = 'Oscourt';
         $clientTest->birthDate = '2002-08-17';
