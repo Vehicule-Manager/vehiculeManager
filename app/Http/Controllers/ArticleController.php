@@ -162,7 +162,7 @@ class ArticleController extends Controller
      *   ),
      *  )
      */
-    public function brandDestroy($id)
+    public function articleDestroy($id)
     {
         $article = DB::table('articles')->where('id', '=', $id)->delete();
 
