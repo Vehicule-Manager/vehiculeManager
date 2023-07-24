@@ -134,7 +134,7 @@ class DatabaseSeeder extends Seeder
             $create->id_brands = $name['id_brands'];
             $create->save();
         }
-        //        ModelCar::factory(5)->create();
+
         Vehicule::factory(50)->create();
         Subject::factory(5)->create();
         Media::factory(5)->create();
