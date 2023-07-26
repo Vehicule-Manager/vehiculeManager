@@ -29,7 +29,8 @@ class VehiculeController extends Controller
             'id_model_car' => 'required|integer',
         ]);
         $vehicule = Vehicule::create($validatedData);
-        return response()->json($vehicule, 201); 
+
+        return response()->json($vehicule, 201);
     }
 
     /**
@@ -137,7 +138,7 @@ class VehiculeController extends Controller
         return response()->json();
     }
 
-    // Doc pour delete à remettre 
+    // Doc pour delete à remettre
 
     public function vehiculeDestroy($id)
     {
