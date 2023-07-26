@@ -12,7 +12,24 @@ class VehiculeController extends Controller
 {
     public function vehiculeStore(Request $request)
     {
-        return response()->json();
+        $validatedData = $request->validate([
+            'new' => 'required|boolean',
+            'firstDateCicrulate' => 'required|date',
+            'description' => 'required|string',
+            'horsepower' => 'required|numeric',
+            'price' => 'required|numeric',
+            'enterDate' => 'required|date',
+            'leavingDate' => 'required|date',
+            'immatriculation' => 'required|string',
+            'id_statuses' => 'required|integer',
+            'id_gear_boxes' => 'required|integer',
+            'id_brands' => 'required|integer',
+            'id_energies' => 'required|integer',
+            'id_types' => 'required|integer',
+            'id_model_car' => 'required|integer',
+        ]);
+        $vehicule = Vehicule::create($validatedData);
+        return response()->json($vehicule, 201); 
     }
 
     /**
@@ -120,52 +137,8 @@ class VehiculeController extends Controller
         return response()->json();
     }
 
-    /**
-     * @OA\Delete(
-     *      path="/vehicules/{id}",
-     *      operationId="vehiculeDestroy",
-     *      tags={"Vehicule"},
+    // Doc pour delete à remettre 
 
-     *      summary="Get Of Vehicule",
-     *      description="Returns the vehicule",
-     *
-     *     @OA\Parameter(
-     *      name="id",
-     *      in="path",
-     *      required=true,
-     *
-     *      @OA\Schema(
-     *           type="integer"
-     *      )
-     *   ),
-     *
-     *      @OA\Response(
-     *          response=200,
-     *          description="Successful operation",
-     *
-     *          @OA\MediaType(
-     *           mediaType="application/json",
-     *      )
-     *      ),
-     *
-     *      @OA\Response(
-     *          response=401,
-     *          description="Unauthenticated",
-     *      ),
-     *      @OA\Response(
-     *          response=403,
-     *          description="Forbidden"
-     *      ),
-     * @OA\Response(
-     *      response=400,
-     *      description="Bad Request"
-     *   ),
-     * @OA\Response(
-     *      response=404,
-     *      description="not found"
-     *   ),
-     *  )
-     */
     public function vehiculeDestroy($id)
     {
         $vehicule = DB::table('vehicules')->where('id', '=', $id)->delete();
