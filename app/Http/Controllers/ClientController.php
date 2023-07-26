@@ -8,9 +8,59 @@ use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
+
+    /**
+     * @OA\Post(
+     *      path="/addcustomers",
+     *      operationId="clientStore",
+     *      tags={"Customer"},
+     *      summary="Add a client",
+     *      description="Add a new client",
+     *
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
     public function clientStore(Request $request)
     {
-        return response()->json();
+       $validatedData = $request->validate([
+           'civility' => 'required|string',
+           'firstname' => 'required|string',
+           'lastname' => 'required|string',
+           'birthDate' => 'required|date',
+           'address' => 'required|string',
+           'optionalAddress' => 'nullable|string',
+           'zipCode' => 'required|string',
+           'city' => 'required|string',
+           'id_users' => 'required|integer',
+           'id_creditInfos' => 'required|integer',
+       ]);
+
+       $client = Client::create($validatedData);
+       return response()->json($client, 201);
     }
 
     /**
@@ -48,6 +98,7 @@ class ClientController extends Controller
      *   ),
      *  )
      */
+
     public function clientIndex()
     {
         $client = Client::all();
