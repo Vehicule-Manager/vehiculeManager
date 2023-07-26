@@ -46,7 +46,21 @@ class ClientController extends Controller
      */
     public function clientStore(Request $request)
     {
-        return response()->json();
+       $validatedData = $request->validate([
+           'civility' => 'required|string',
+           'firstname' => 'required|string',
+           'lastname' => 'required|string',
+           'birthDate' => 'required|date',
+           'address' => 'required|string',
+           'optionalAddress' => 'nullable|string',
+           'zipCode' => 'required|string',
+           'city' => 'required|string',
+           'id_users' => 'required|integer',
+           'id_creditInfos' => 'required|integer',
+       ]);
+
+       $client = Client::create($validatedData);
+       return response()->json($client, 201);
     }
 
     /**
