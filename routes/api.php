@@ -219,7 +219,7 @@ Route::get('/articles', [ArticleController::class, 'articleIndex']);
 // Display one article
 Route::get('/articles/{id}', [ArticleController::class, 'articleShow']);
 // Add article
-Route::post('/articles', [ArticleController::class, 'articleStore']);
+Route::post('/add/articles', [ArticleController::class, 'articleStore']);
 // Update a article
 Route::put('/articles/{id}', [ArticleController::class, 'articleUpdate']);
 // Delete a article
@@ -230,7 +230,7 @@ Route::get('/table/articles', [ArticleController::class, 'articleTable']);
 // Route for ArticleByVehicules
 Route::get('/articles/vehicules', [VehiculeByArticleController::class, 'articleByVehiculeIndex']);
 Route::get('/articles/vehicules/{id}', [VehiculeByArticleController::class, 'articleByVehiculeShow']);
-Route::post('/articles/vehicules', [VehiculeByArticleController::class, 'articleByVehiculeStore']);
+Route::post('/add/articles/vehicules', [VehiculeByArticleController::class, 'articleByVehiculeStore']);
 Route::put('/articles/vehicules/{id}', [VehiculeByArticleController::class, 'articleByVehiculeUpdate']);
 Route::delete('/articles/vehicules/{id}', [VehiculeByArticleController::class, 'articleByVehiculeDestroy']);
 Route::get('/vehicules/{id}/articles', [VehiculeByArticleController::class, 'articleByVehiculeShowByVehicle']);
