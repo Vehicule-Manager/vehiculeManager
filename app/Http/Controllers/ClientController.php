@@ -11,7 +11,7 @@ class ClientController extends Controller
 
     /**
      * @OA\Post(
-     *      path="/addcustomers",
+     *      path="/add/clients",
      *      operationId="clientStore",
      *      tags={"Customer"},
      *      summary="Add a client",
@@ -65,7 +65,7 @@ class ClientController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/customers",
+     *      path="/clients",
      *      operationId="clientIndex",
      *      tags={"Customer"},
      *      summary="Get List Of client",
@@ -108,7 +108,7 @@ class ClientController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/customers/{id}",
+     *      path="/clients/{id}",
      *      operationId="clientShow",
      *      tags={"Customer"},
      *      summary="Get a one client",
@@ -166,7 +166,7 @@ class ClientController extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/customers/{id}",
+     *      path="/delete/clients/{id}",
      *      operationId="clientDestroy",
      *      tags={"Customer"},
      *      summary="Delete a one client",
@@ -218,7 +218,7 @@ class ClientController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/user/customer/{id}",
+     *      path="/user/client/{id}",
      *      operationId="clientByUser",
      *      tags={"Customer"},
      *      summary="Get a one client",

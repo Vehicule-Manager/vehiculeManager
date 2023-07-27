@@ -262,11 +262,11 @@ Route::get('/clients', [ClientController::class, 'clientIndex']);
 // Display one client
 Route::get('/clients/{id}', [ClientController::class, 'clientShow']);
 // Add a client
-Route::post('/clients', [ClientController::class, 'clientStore']);
+Route::post('/add/clients', [ClientController::class, 'clientStore']);
 // Update a client
 Route::put('/clients/{id}', [ClientController::class, 'clientUpdate']);
 // Delete a client
-Route::delete('/clients/{id}', [ClientController::class, 'clientDestroy']);
+Route::delete('/delete/clients/{id}', [ClientController::class, 'clientDestroy']);
 // Display one client
 Route::get('/user/client/{id}', [ClientController::class, 'clientByUser']);
 
