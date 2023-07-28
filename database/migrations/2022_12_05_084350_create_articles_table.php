@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('id');
             $table->string('title', 50);
             $table->text('content');
+            $table->text('description');
             $table->timestamps();
-            $table->integer('likes_number');
         });
     }
 

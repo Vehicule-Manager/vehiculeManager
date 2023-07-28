@@ -9,9 +9,77 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class ArticleController extends Controller
 {
+    /**
+     * @OA\Post(
+     *      path="/add/articles",
+     *      operationId="articlesStore",
+     *      tags={"Article"},
+     *      summary="Add an article",
+     *      description="Add a new article",
+     * @OA\Parameter(
+     *      name="title",
+     *      in="query",
+     *      required=true,
+     *
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     * @OA\Parameter(
+     *      name="content",
+     *      in="query",
+     *      required=true,
+     *
+     *      @OA\Schema(
+     *           type="text"
+     *      )
+     *   ),
+     * @OA\Parameter(
+     *      name="description",
+     *      in="query",
+     *      required=true,
+     *
+     *      @OA\Schema(
+     *           type="text"
+     *      )
+     *   ),
+     *
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
     public function articleStore(Request $request)
     {
-        return response()->json();
+        $validatedData = $request->validate([
+            'title' => 'required|string',
+            'content' => 'required|string',
+            'description' => 'required|string',
+        ]);
+        $article = Article::create($validatedData);
+        return response()->json($article, 201);
     }
 
     /**
@@ -106,7 +174,7 @@ class ArticleController extends Controller
      */
     public function articleShow($id)
     {
-        $article = DB::table('articles')->select('title', 'content')->where('id', '=', $id)->get();
+        $article = DB::table('articles')->select('title', 'content', 'description')->where('id', '=', $id)->get();
 
         return response()->json($article);
     }

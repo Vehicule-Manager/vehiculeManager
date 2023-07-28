@@ -19,7 +19,7 @@
 - créer un controller : docker compose run laravel php artisan make:controller < nom du controller >
 - Créer un model + migration : docker compose run laravel php artisan make:model < nom du model > -m
 - Faire un migrate : docker compose run laravel php artisan migrate
-- Commande pour generate swagger : sudo docker-compose run laravel php artisan l5-swagger:generate
+- Commande pour generate swagger : docker compose run laravel php artisan l5-swagger:generate
 - Commande pour générer les seeders : docker compose run laravel php artisan db:seed
 
 ## ![MariaDB](https://img.shields.io/badge/MariaDB-black?style=flat-square&logo=mariadb) Commandes pour Auth
