@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
 use App\Models\VehiculeByArticle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +15,7 @@ class VehiculeByArticleController extends Controller
      *      tags={"ArticleByVehicule"},
      *      summary="Add an articleByVehicule",
      *      description="Add a new articleByVehicule",
+     *
      * @OA\Parameter(
      *      name="id_vehicules",
      *      in="query",
@@ -25,6 +25,7 @@ class VehiculeByArticleController extends Controller
      *           type="integer"
      *      )
      *   ),
+     *
      * @OA\Parameter(
      *      name="id_articles",
      *      in="query",
@@ -69,6 +70,7 @@ class VehiculeByArticleController extends Controller
             'id_articles' => 'required|integer',
         ]);
         $articleByVehicule = VehiculeByArticle::create($validatedData);
+
         return response()->json($articleByVehicule, 201);
     }
 

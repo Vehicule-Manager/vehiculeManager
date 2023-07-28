@@ -16,6 +16,7 @@ class ArticleController extends Controller
      *      tags={"Article"},
      *      summary="Add an article",
      *      description="Add a new article",
+     *
      * @OA\Parameter(
      *      name="title",
      *      in="query",
@@ -25,6 +26,7 @@ class ArticleController extends Controller
      *           type="string"
      *      )
      *   ),
+     *
      * @OA\Parameter(
      *      name="content",
      *      in="query",
@@ -34,6 +36,7 @@ class ArticleController extends Controller
      *           type="text"
      *      )
      *   ),
+     *
      * @OA\Parameter(
      *      name="description",
      *      in="query",
@@ -79,6 +82,7 @@ class ArticleController extends Controller
             'description' => 'required|string',
         ]);
         $article = Article::create($validatedData);
+
         return response()->json($article, 201);
     }
 
