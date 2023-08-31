@@ -6,6 +6,7 @@
 - voir les conteneurs : docker ps
 - Démarrer un service : docker exec -it <nom du conteneur> bash
 - Connexion BDD : mysql -h < Host > -u < user > -p < password >
+- Test avec PHP Unit pour tester les routes : docker compose run --rm laravel ./vendor/phpunit/phpunit/phpunit
 
 ## ![MariaDB](https://img.shields.io/badge/MariaDB-black?style=flat-square&logo=mariadb) Commandes débuter le projet 
 
